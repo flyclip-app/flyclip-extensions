@@ -4,20 +4,24 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Extensions](https://img.shields.io/badge/Extensions-40%2B-brightgreen.svg)]()
 
-专为 **FlyClip (Windows 平台剪贴板/划词辅助神器)** 打造的官方开源扩展库。全面兼容 PopClip 格式规范，深度适配 Windows 平台生态。
+专为 **FlyClip (Windows 平台剪贴板/划词辅助神器)** 打造的原生官方扩展库。
+
+### 💡 设计理念：原生 `.flyclipext` 标准 + 极低迁移成本
+- **原生标准**：本仓库所有扩展均采用 FlyClip 原生的 **`.flyclipext`**（包目录）与 **`.flyclipextz`**（单文件安装包）格式。
+- **一致的心智模型与近乎零的迁移成本**：FlyClip 扩展的语法结构与 PopClip 保持高度一致（声明式 YAML、输入/输出流、动作管道、参数选项）。开发者或用户可以将 macOS PopClip 上的优秀扩展思路、URL 规则、正则匹配无缝复刻为 Windows `.flyclipext` 原生扩展，且语法天然兼容！
 
 ---
 
 ## 🌟 特性亮点
 
-- **🧩 40+ 常用扩展**：涵盖翻译查词、搜索引擎、AI 对话、文本处理、开发调试与电商媒体。
+- **🧩 40+ 常用原生扩展**：涵盖翻译查词、搜索引擎、AI 对话、文本处理、开发调试与电商媒体。
 - **⚙️ 全功能选项支持 (Options)**：
   - **开关 (Toggle / Boolean)**：一键启用或禁用特定功能。
   - **分段/单选组 (Choice / Multiple)**：灵活切换翻译站点、目标语言、搜索分类、正则引擎等。
   - **文本输入 (Text / String)**：自定义分隔符、缩进格式或前缀。
   - **密钥凭据 (Secret / Password)**：安全存储 API Key、Token。
-- **⚡ Windows 原生执行**：内置对 PowerShell 7/5.1 脚本、系统默认浏览器、Windows 键盘热键映射的原生支持。
-- **📦 零依赖双向格式**：同时支持 `.flyclipext` / `.popclipext` 源码目录与 `.flyclipextz` 打包归档。
+- **⚡ Windows 原生执行**：深度集成 PowerShell 7/5.1、系统默认浏览器及 Windows 键盘热键映射。
+- **🔄 双向语法别名支持**：原生优先使用 `FLYCLIP_*` 与 `{flyclip text}`，同时完全兼容 PopClip 的 `POPCLIP_*` 与 `{popclip text}` 语法。
 
 ---
 
