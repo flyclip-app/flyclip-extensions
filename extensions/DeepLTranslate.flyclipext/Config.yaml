@@ -1,0 +1,36 @@
+name: DeepL Translate
+identifier: com.flyclip.extension.deepl-translate
+description:
+  en: Translate selected text with DeepL
+  zh: 使用 DeepL 翻译选中的文本
+icon: iconify:simple-icons:deepl
+options:
+  - identifier: target_lang
+    label:
+      en: Target Language
+      zh: 目标语言
+    type: multiple
+    values:
+      - zh
+      - en
+      - ja
+      - de
+      - fr
+      - es
+      - ru
+      - ko
+    value labels:
+      - 中文 (zh)
+      - English (en)
+      - 日本語 (ja)
+      - Deutsch (de)
+      - Français (fr)
+      - Español (es)
+      - Русский (ru)
+      - 한국어 (ko)
+    default value: zh
+
+actions:
+  - title: DeepL
+    url: https://www.deepl.com/translator#auto/{flyclip option target_lang}/{flyclip text}
+    requirements: [text]

@@ -1,0 +1,34 @@
+name: Timestamp Converter
+identifier: com.flyclip.extension.timestamp-converter
+description:
+  en: Convert Unix timestamps to human dates, or date strings to timestamps
+  zh: Unix 时间戳与本地可读日期时间相互转换
+icon: ⏱️
+actions:
+  - title: 时间戳转日期 (To Date)
+    identifier: to_date
+    shell script: |
+      $s = $env:FLYCLIP_TEXT.Trim()
+      try {
+        if ($s -match '^\d{10}$') {
+          $epoch = [DateTimeOffset]::FromUnixTimeSeconds([int64]$s).ToLocalTime()
+          Write-Host -NoNewline ($epoch.ToString("yyyy-MM-dd HH:mm:ss"))
+        } elseif ($s -match '^\d{13}$') {
+          $epoch = [DateTimeOffset]::FromUnixTimeMilliseconds([int64]$s).ToLocalTime()
+          Write-Host -NoNewline ($epoch.ToString("yyyy-MM-dd HH:mm:ss.fff"))
+        } else {
+          Write-Host -NoNewline "[无效的时间戳: 需为 10 位秒级或 13 位毫秒级数字]"
+        }
+      } catch {
+        Write-Host -NoNewline "[转换失败]"
+      }
+    requirements: [text]
+    after: paste-result
+
+  - title: 当前时间戳 (Now)
+    identifier: now
+    shell script: |
+      $sec = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
+      Write-Host -NoNewline "$sec"
+    requirements: [text]
+    after: paste-result

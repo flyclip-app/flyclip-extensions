@@ -1,0 +1,10 @@
+name: DeepSeek
+identifier: com.flyclip.extension.deepseek
+description:
+  en: Ask DeepSeek AI with selected text
+  zh: 发送选中文本给 DeepSeek 深度求索 AI
+icon: DS
+actions:
+  - title: DeepSeek
+    url: https://chat.deepseek.com/?q=***
+    requirements: [text]

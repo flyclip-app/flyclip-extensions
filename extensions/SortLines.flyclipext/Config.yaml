@@ -1,0 +1,53 @@
+name: Sort Lines
+identifier: com.flyclip.extension.sort-lines
+description:
+  en: Sort lines of text alphabetically, reversely, or remove duplicates
+  zh: 多行文本按字母顺序升序、降序排序或去重
+icon: AZ
+options:
+  - identifier: case_sensitive
+    label:
+      en: Case Sensitive Sort
+      zh: 区分大小写
+    type: boolean
+    default value: false
+
+actions:
+  - title: 升序排序 (A-Z)
+    identifier: sort_asc
+    shell script: |
+      $lines = $env:FLYCLIP_TEXT -split "`r`n|`r|`n"
+      if ($env:FLYCLIP_OPTION_CASE_SENSITIVE -eq "1") {
+        $sorted = $lines | Sort-Object -CaseSensitive
+      } else {
+        $sorted = $lines | Sort-Object
+      }
+      Write-Host -NoNewline ($sorted -join "`r`n")
+    requirements: [text]
+    after: paste-result
+
+  - title: 降序排序 (Z-A)
+    identifier: sort_desc
+    shell script: |
+      $lines = $env:FLYCLIP_TEXT -split "`r`n|`r|`n"
+      if ($env:FLYCLIP_OPTION_CASE_SENSITIVE -eq "1") {
+        $sorted = $lines | Sort-Object -CaseSensitive -Descending
+      } else {
+        $sorted = $lines | Sort-Object -Descending
+      }
+      Write-Host -NoNewline ($sorted -join "`r`n")
+    requirements: [text]
+    after: paste-result
+
+  - title: 行去重 (Unique)
+    identifier: unique
+    shell script: |
+      $lines = $env:FLYCLIP_TEXT -split "`r`n|`r|`n"
+      if ($env:FLYCLIP_OPTION_CASE_SENSITIVE -eq "1") {
+        $sorted = $lines | Select-Object -Unique -CaseSensitive
+      } else {
+        $sorted = $lines | Select-Object -Unique
+      }
+      Write-Host -NoNewline ($sorted -join "`r`n")
+    requirements: [text]
+    after: paste-result

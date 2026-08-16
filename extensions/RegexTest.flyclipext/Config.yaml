@@ -1,0 +1,30 @@
+name: Regex101
+identifier: com.flyclip.extension.regex101
+description:
+  en: Test and explain regular expressions in Regex101
+  zh: 在 Regex101 中测试与解析正则表达式
+icon: ".*"
+options:
+  - identifier: flavor
+    label:
+      en: Regex Engine Flavor
+      zh: 正则引擎分支
+    type: multiple
+    values:
+      - pcre2
+      - javascript
+      - python
+      - golang
+      - rust
+    value labels:
+      - PCRE2
+      - JavaScript
+      - Python
+      - Golang
+      - Rust
+    default value: pcre2
+
+actions:
+  - title: Regex101
+    url: https://regex101.com/?regex={flyclip text}&flavor={flyclip option flavor}
+    requirements: [text]

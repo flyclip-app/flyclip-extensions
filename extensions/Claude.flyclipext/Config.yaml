@@ -1,0 +1,10 @@
+name: Claude
+identifier: com.flyclip.extension.claude
+description:
+  en: Ask Anthropic Claude with selected text
+  zh: 发送选中文本给 Anthropic Claude 对话
+icon: iconify:simple-icons:anthropic
+actions:
+  - title: Claude
+    url: https://claude.ai/new?q=***
+    requirements: [text]

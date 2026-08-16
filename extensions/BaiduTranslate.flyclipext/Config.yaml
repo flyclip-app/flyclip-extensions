@@ -1,0 +1,36 @@
+name: Baidu Translate
+identifier: com.flyclip.extension.baidu-translate
+description:
+  en: Translate selected text with Baidu Translate
+  zh: 使用百度翻译选中的文本
+icon: iconify:simple-icons:baidu
+options:
+  - identifier: target_lang
+    label:
+      en: Target Language
+      zh: 目标语言
+    type: multiple
+    values:
+      - zh
+      - en
+      - jp
+      - kor
+      - fra
+      - de
+      - spa
+      - ru
+    value labels:
+      - 中文 (zh)
+      - 英语 (en)
+      - 日语 (jp)
+      - 韩语 (kor)
+      - 法语 (fra)
+      - 德语 (de)
+      - 西班牙语 (spa)
+      - 俄语 (ru)
+    default value: zh
+
+actions:
+  - title: 百度翻译
+    url: https://fanyi.baidu.com/#auto/{flyclip option target_lang}/{flyclip text}
+    requirements: [text]

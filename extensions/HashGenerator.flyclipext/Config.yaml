@@ -1,0 +1,36 @@
+name: Hash Generator
+identifier: com.flyclip.extension.hash-generator
+description:
+  en: Calculate MD5, SHA-256, SHA-1, and SHA-512 hashes
+  zh: 计算文本的 MD5、SHA-256、SHA-1 或 SHA-512 哈希摘要
+icon: "#"
+options:
+  - identifier: uppercase
+    label:
+      en: Output Uppercase Hex
+      zh: 输出大写十六进制
+    type: boolean
+    default value: false
+
+actions:
+  - title: MD5
+    identifier: md5
+    shell script: |
+      $bytes = [System.Text.Encoding]::UTF8.GetBytes($env:FLYCLIP_TEXT)
+      $md5 = [System.Security.Cryptography.MD5]::Create().ComputeHash($bytes)
+      $hex = [BitConverter]::ToString($md5).Replace('-', '')
+      if ($env:FLYCLIP_OPTION_UPPERCASE -ne "1") { $hex = $hex.ToLower() }
+      Write-Host -NoNewline $hex
+    requirements: [text]
+    after: paste-result
+
+  - title: SHA256
+    identifier: sha256
+    shell script: |
+      $bytes = [System.Text.Encoding]::UTF8.GetBytes($env:FLYCLIP_TEXT)
+      $sha = [System.Security.Cryptography.SHA256]::Create().ComputeHash($bytes)
+      $hex = [BitConverter]::ToString($sha).Replace('-', '')
+      if ($env:FLYCLIP_OPTION_UPPERCASE -ne "1") { $hex = $hex.ToLower() }
+      Write-Host -NoNewline $hex
+    requirements: [text]
+    after: paste-result

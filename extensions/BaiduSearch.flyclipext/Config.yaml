@@ -1,0 +1,10 @@
+name: 百度搜索
+identifier: com.flyclip.extension.baidu-search
+description:
+  en: Search the web with Baidu
+  zh: 使用百度搜索选中文本
+icon: iconify:simple-icons:baidu
+actions:
+  - title: 百度
+    url: https://www.baidu.com/s?wd=***
+    requirements: [text]

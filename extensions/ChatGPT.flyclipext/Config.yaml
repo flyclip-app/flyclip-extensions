@@ -1,0 +1,10 @@
+name: ChatGPT
+identifier: com.flyclip.extension.chatgpt
+description:
+  en: Ask ChatGPT with selected text
+  zh: 发送选中文本给 ChatGPT 进行提问或分析
+icon: iconify:simple-icons:openai
+actions:
+  - title: ChatGPT
+    url: https://chatgpt.com/?q=***
+    requirements: [text]

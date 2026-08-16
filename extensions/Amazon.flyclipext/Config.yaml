@@ -1,0 +1,31 @@
+name: Amazon
+identifier: com.flyclip.extension.amazon
+description:
+  en: Search products on Amazon worldwide
+  zh: 在全球各站点 Amazon 亚马逊搜索商品
+icon: iconify:simple-icons:amazon
+options:
+  - identifier: site
+    label:
+      en: Amazon Store
+      zh: 亚马逊商城站点
+    type: multiple
+    values:
+      - amazon.com
+      - amazon.cn
+      - amazon.co.jp
+      - amazon.co.uk
+      - amazon.de
+    value labels:
+      - US (amazon.com)
+      - 中国 (amazon.cn)
+      - 日本 (amazon.co.jp)
+      - 英国 (amazon.co.uk)
+      - 德国 (amazon.de)
+    default value: amazon.com
+
+actions:
+  - title: Amazon
+    url: https://www.{flyclip option site}/s?k=***
+    spaces as plus: true
+    requirements: [text]

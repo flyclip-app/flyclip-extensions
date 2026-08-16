@@ -1,0 +1,59 @@
+name: Case Converter
+identifier: com.flyclip.extension.case-converter
+description:
+  en: Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and kebab-case
+  zh: 在大写、小写、词首大写、驼峰、下划线、短横线等命名格式之间快速转换
+icon: Aa
+actions:
+  - title: 大写 (UPPER)
+    identifier: uppercase
+    shell script: Write-Host -NoNewline $env:FLYCLIP_TEXT.ToUpper()
+    requirements: [text]
+    after: paste-result
+
+  - title: 小写 (lower)
+    identifier: lowercase
+    shell script: Write-Host -NoNewline $env:FLYCLIP_TEXT.ToLower()
+    requirements: [text]
+    after: paste-result
+
+  - title: 词首大写 (Title)
+    identifier: titlecase
+    shell script: |
+      $culture = [System.Globalization.CultureInfo]::CurrentCulture
+      Write-Host -NoNewline ($culture.TextInfo.ToTitleCase($env:FLYCLIP_TEXT.ToLower()))
+    requirements: [text]
+    after: paste-result
+
+  - title: 驼峰 (camelCase)
+    identifier: camelcase
+    shell script: |
+      $words = [regex]::Split($env:FLYCLIP_TEXT, '[^a-zA-Z0-9]+') | Where-Object { $_ }
+      if ($words.Count -eq 0) { Write-Host -NoNewline $env:FLYCLIP_TEXT; exit }
+      $first = $words[0].ToLower()
+      $rest = $words | Select-Object -Skip 1 | ForEach-Object {
+        if ($_.Length -gt 1) { $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower() } else { $_.ToUpper() }
+      }
+      Write-Host -NoNewline ($first + ($rest -join ''))
+    requirements: [text]
+    after: paste-result
+
+  - title: 下划线 (snake_case)
+    identifier: snakecase
+    shell script: |
+      $s = [regex]::Replace($env:FLYCLIP_TEXT, '([a-z0-9])([A-Z])', '$1_$2')
+      $s = [regex]::Replace($s, '[^a-zA-Z0-9]+', '_')
+      $s = $s.Trim('_').ToLower()
+      Write-Host -NoNewline $s
+    requirements: [text]
+    after: paste-result
+
+  - title: 连字符 (kebab-case)
+    identifier: kebabcase
+    shell script: |
+      $s = [regex]::Replace($env:FLYCLIP_TEXT, '([a-z0-9])([A-Z])', '$1-$2')
+      $s = [regex]::Replace($s, '[^a-zA-Z0-9]+', '-')
+      $s = $s.Trim('-').ToLower()
+      Write-Host -NoNewline $s
+    requirements: [text]
+    after: paste-result

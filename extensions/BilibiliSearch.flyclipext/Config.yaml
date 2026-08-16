@@ -1,0 +1,10 @@
+name: 哔哩哔哩
+identifier: com.flyclip.extension.bilibili-search
+description:
+  en: Search videos and content on Bilibili
+  zh: 在哔哩哔哩 (Bilibili) 搜索视频与UP主
+icon: iconify:simple-icons:bilibili
+actions:
+  - title: 哔哩哔哩
+    url: https://search.bilibili.com/all?keyword=***
+    requirements: [text]

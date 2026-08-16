@@ -1,0 +1,10 @@
+name: 京东搜索
+identifier: com.flyclip.extension.jd-search
+description:
+  en: Search products on JD.com
+  zh: 在京东商城搜索选中的商品关键词
+icon: iconify:simple-icons:jd
+actions:
+  - title: 京东
+    url: https://search.jd.com/Search?keyword=***
+    requirements: [text]

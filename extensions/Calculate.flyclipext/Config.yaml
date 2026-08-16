@@ -1,0 +1,19 @@
+name: Calculate
+identifier: com.flyclip.extension.calculate
+description:
+  en: Evaluate mathematical expressions (e.g. 128*1024, (50+20)/3, [Math]::Sqrt(256))
+  zh: 计算选中的数学表达式
+icon: "=?"
+actions:
+  - title: 计算结果
+    identifier: eval
+    shell script: |
+      try {
+        $expr = $env:FLYCLIP_TEXT.Trim()
+        $result = Invoke-Expression $expr
+        Write-Host -NoNewline "$expr = $result"
+      } catch {
+        Write-Host -NoNewline "[计算出错: 表达式无效]"
+      }
+    requirements: [text]
+    after: show-result

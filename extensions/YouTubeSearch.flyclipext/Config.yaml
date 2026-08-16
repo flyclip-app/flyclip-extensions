@@ -1,0 +1,10 @@
+name: YouTube
+identifier: com.flyclip.extension.youtube-search
+description:
+  en: Search videos on YouTube
+  zh: 在 YouTube 上搜索视频
+icon: iconify:simple-icons:youtube
+actions:
+  - title: YouTube
+    url: https://www.youtube.com/results?search_query=***
+    requirements: [text]

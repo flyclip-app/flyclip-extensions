@@ -1,0 +1,22 @@
+name: Remove Spaces
+identifier: com.flyclip.extension.remove-spaces
+description:
+  en: Remove all whitespace or collapse consecutive spaces
+  zh: 删除所有空格或压缩多余空白字符
+icon: "␣"
+actions:
+  - title: 压缩空格
+    identifier: collapse
+    shell script: |
+      $s = [regex]::Replace($env:FLYCLIP_TEXT, '\s+', ' ')
+      Write-Host -NoNewline $s.Trim()
+    requirements: [text]
+    after: paste-result
+
+  - title: 消除所有空格
+    identifier: remove_all
+    shell script: |
+      $s = [regex]::Replace($env:FLYCLIP_TEXT, '\s+', '')
+      Write-Host -NoNewline $s
+    requirements: [text]
+    after: paste-result

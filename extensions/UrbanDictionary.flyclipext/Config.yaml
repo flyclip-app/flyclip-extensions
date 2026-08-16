@@ -1,0 +1,10 @@
+name: Urban Dictionary
+identifier: com.flyclip.extension.urban-dictionary
+description:
+  en: Look up slang and idioms on Urban Dictionary
+  zh: 在 Urban Dictionary 查询英语俚语与俗语
+icon: UD
+actions:
+  - title: Urban Dict
+    url: https://www.urbandictionary.com/define.php?term={flyclip text}
+    requirements: [text]

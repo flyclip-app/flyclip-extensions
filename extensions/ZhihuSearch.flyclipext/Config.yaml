@@ -1,0 +1,10 @@
+name: 知乎搜索
+identifier: com.flyclip.extension.zhihu-search
+description:
+  en: Search Zhihu knowledge community
+  zh: 在知乎上搜索问题与文章
+icon: iconify:simple-icons:zhihu
+actions:
+  - title: 知乎
+    url: https://www.zhihu.com/search?type=content&q=***
+    requirements: [text]

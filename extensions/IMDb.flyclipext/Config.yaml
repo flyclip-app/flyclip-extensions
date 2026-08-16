@@ -1,0 +1,10 @@
+name: IMDb
+identifier: com.flyclip.extension.imdb
+description:
+  en: Search movies, TV shows, and celebrities on IMDb
+  zh: 在 IMDb 搜索电影、剧集与演员资料
+icon: iconify:simple-icons:imdb
+actions:
+  - title: IMDb
+    url: https://www.imdb.com/find?q=***
+    requirements: [text]

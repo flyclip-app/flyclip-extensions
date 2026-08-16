@@ -1,0 +1,47 @@
+name: Base64
+identifier: com.flyclip.extension.base64
+description:
+  en: Encode or decode text with Base64
+  zh: Base64 编码与解码转换
+icon: B64
+options:
+  - identifier: url_safe
+    label:
+      en: URL-safe Base64 (- and _)
+      zh: URL 安全模式 (使用 - 与 _)
+    type: boolean
+    default value: false
+
+actions:
+  - title: Base64 编码
+    identifier: encode
+    shell script: |
+      $bytes = [System.Text.Encoding]::UTF8.GetBytes($env:FLYCLIP_TEXT)
+      $b64 = [Convert]::ToBase64String($bytes)
+      if ($env:FLYCLIP_OPTION_URL_SAFE -eq "1") {
+        $b64 = $b64.Replace('+', '-').Replace('/', '_').TrimEnd('=')
+      }
+      Write-Host -NoNewline $b64
+    requirements: [text]
+    after: paste-result
+
+  - title: Base64 解码
+    identifier: decode
+    shell script: |
+      $s = $env:FLYCLIP_TEXT.Trim()
+      if ($env:FLYCLIP_OPTION_URL_SAFE -eq "1") {
+        $s = $s.Replace('-', '+').Replace('_', '/')
+        switch ($s.Length % 4) {
+          2 { $s += '==' }
+          3 { $s += '=' }
+        }
+      }
+      try {
+        $bytes = [Convert]::FromBase64String($s)
+        $text = [System.Text.Encoding]::UTF8.GetString($bytes)
+        Write-Host -NoNewline $text
+      } catch {
+        Write-Host -NoNewline "[Base64 解码错误: 格式不合法]"
+      }
+    requirements: [text]
+    after: paste-result

@@ -1,0 +1,10 @@
+name: DuckDuckGo
+identifier: com.flyclip.extension.duckduckgo
+description:
+  en: Privacy search with DuckDuckGo
+  zh: 使用 DuckDuckGo 隐私搜索
+icon: iconify:simple-icons:duckduckgo
+actions:
+  - title: DDG
+    url: https://duckduckgo.com/?q=***
+    requirements: [text]

@@ -1,0 +1,30 @@
+name: MDN Web Docs
+identifier: com.flyclip.extension.mdn-web-docs
+description:
+  en: Search MDN Web Docs documentation
+  zh: 搜索 MDN Web Docs 开发者文档
+icon: MDN
+options:
+  - identifier: locale
+    label:
+      en: Documentation Locale
+      zh: 文档语言
+    type: multiple
+    values:
+      - zh-CN
+      - en-US
+      - ja
+      - fr
+      - es
+    value labels:
+      - 简体中文 (zh-CN)
+      - English (en-US)
+      - 日本語 (ja)
+      - Français (fr)
+      - Español (es)
+    default value: zh-CN
+
+actions:
+  - title: MDN
+    url: https://developer.mozilla.org/{flyclip option locale}/search?q={flyclip text}
+    requirements: [text]

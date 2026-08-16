@@ -1,0 +1,30 @@
+name: GitHub Search
+identifier: com.flyclip.extension.github-search
+description:
+  en: Search repositories, code, and issues on GitHub
+  zh: 在 GitHub 上搜索开源项目仓库、代码或 Issue
+icon: iconify:simple-icons:github
+options:
+  - identifier: search_type
+    label:
+      en: Search Type
+      zh: 搜索类型
+    type: multiple
+    values:
+      - repositories
+      - code
+      - issues
+      - commits
+      - users
+    value labels:
+      - Repositories (代码仓库)
+      - Code (代码)
+      - Issues (工单/问题)
+      - Commits (提交记录)
+      - Users (开发者)
+    default value: repositories
+
+actions:
+  - title: GitHub
+    url: https://github.com/search?q={flyclip text}&type={flyclip option search_type}
+    requirements: [text]

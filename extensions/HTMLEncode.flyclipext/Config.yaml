@@ -1,0 +1,20 @@
+name: HTML Encode
+identifier: com.flyclip.extension.html-encode
+description:
+  en: Encode or decode HTML special entities (&lt;, &gt;, &amp;, etc.)
+  zh: HTML 实体编码与反转义解码
+icon: <&>
+actions:
+  - title: HTML 转义
+    identifier: encode
+    shell script: |
+      Write-Host -NoNewline ([System.Net.WebUtility]::HtmlEncode($env:FLYCLIP_TEXT))
+    requirements: [text]
+    after: paste-result
+
+  - title: HTML 反转义
+    identifier: decode
+    shell script: |
+      Write-Host -NoNewline ([System.Net.WebUtility]::HtmlDecode($env:FLYCLIP_TEXT))
+    requirements: [text]
+    after: paste-result

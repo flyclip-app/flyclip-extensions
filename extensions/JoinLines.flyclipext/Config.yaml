@@ -1,0 +1,38 @@
+name: Join Lines
+identifier: com.flyclip.extension.join-lines
+description:
+  en: Join multi-line text into a single line with custom delimiter
+  zh: 将多行文本合并为单行，支持指定分隔符
+icon: ->
+options:
+  - identifier: delimiter
+    label:
+      en: Delimiter
+      zh: 分隔符类型
+    type: multiple
+    values:
+      - comma_space
+      - comma
+      - space
+      - semicolon
+    value labels:
+      - 逗号空格 (", ")
+      - 纯逗号 (",")
+      - 空格 (" ")
+      - 分号 ("; ")
+    default value: comma_space
+
+actions:
+  - title: 合并为单行
+    identifier: join
+    shell script: |
+      $lines = $env:FLYCLIP_TEXT -split "`r`n|`r|`n" | Where-Object { $_.Trim() }
+      $delim = switch ($env:FLYCLIP_OPTION_DELIMITER) {
+        "comma" { "," }
+        "space" { " " }
+        "semicolon" { "; " }
+        default { ", " }
+      }
+      Write-Host -NoNewline ($lines -join $delim)
+    requirements: [text]
+    after: paste-result

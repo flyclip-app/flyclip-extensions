@@ -1,0 +1,21 @@
+name: URL Encode
+identifier: com.flyclip.extension.url-encode
+description:
+  en: Percent-encode or decode URL strings
+  zh: URL 编码与解码转换
+icon: "%20"
+actions:
+  - title: URL 编码
+    identifier: encode
+    shell script: |
+      [System.Reflection.Assembly]::LoadWithPartialName("System.Web") | Out-Null
+      Write-Host -NoNewline ([System.Uri]::EscapeDataString($env:FLYCLIP_TEXT))
+    requirements: [text]
+    after: paste-result
+
+  - title: URL 解码
+    identifier: decode
+    shell script: |
+      Write-Host -NoNewline ([System.Uri]::UnescapeDataString($env:FLYCLIP_TEXT))
+    requirements: [text]
+    after: paste-result

@@ -1,0 +1,28 @@
+name: Google Search
+identifier: com.flyclip.extension.google-search
+description:
+  en: Search the web with Google
+  zh: 使用 Google 搜索选中文本
+icon: iconify:simple-icons:google
+options:
+  - identifier: site
+    label:
+      en: Google Domain
+      zh: Google 搜索域名
+    type: multiple
+    values:
+      - google.com
+      - google.com.hk
+      - google.co.jp
+      - google.co.uk
+    value labels:
+      - google.com (Global)
+      - google.com.hk (Hong Kong)
+      - google.co.jp (Japan)
+      - google.co.uk (UK)
+    default value: google.com
+
+actions:
+  - title: Google
+    url: https://www.{flyclip option site}/search?q=***
+    requirements: [text]

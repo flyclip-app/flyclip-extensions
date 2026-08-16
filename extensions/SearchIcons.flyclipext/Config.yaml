@@ -1,0 +1,10 @@
+name: Iconify Search
+identifier: com.flyclip.extension.iconify-search
+description:
+  en: Search 200,000+ vector icons on Iconify
+  zh: 在 Iconify 搜索超过 20 万个开源矢量图标
+icon: iconify:simple-icons:iconify
+actions:
+  - title: Iconify
+    url: https://icon-sets.iconify.design/?query=***
+    requirements: [text]

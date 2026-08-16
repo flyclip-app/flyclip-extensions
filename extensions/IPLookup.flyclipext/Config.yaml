@@ -1,0 +1,27 @@
+name: IP Lookup
+identifier: com.flyclip.extension.ip-lookup
+description:
+  en: Look up IP address geolocation and WHOIS information
+  zh: 查询 IP 地址归属地与 WHOIS 信息
+icon: IP
+options:
+  - identifier: provider
+    label:
+      en: Lookup Service
+      zh: 查询平台
+    type: multiple
+    values:
+      - ipinfo
+      - ip138
+      - bgp
+    value labels:
+      - IPInfo.io (Global)
+      - IP138 (中国地区精准)
+      - BGP Toolkit (HE.net ASN)
+    default value: ipinfo
+
+actions:
+  - title: IP 查询
+    identifier: lookup_ipinfo
+    requirements: [text]
+    url: https://ipinfo.io/{flyclip text}

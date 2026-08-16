@@ -1,0 +1,32 @@
+name: JSON Formatter
+identifier: com.flyclip.extension.json-formatter
+description:
+  en: Format (prettify) or compress (minify) JSON text
+  zh: 格式化美化 JSON 或压缩单行 JSON
+icon: "{}"
+actions:
+  - title: 格式化 JSON
+    identifier: format
+    shell script: |
+      try {
+        $obj = $env:FLYCLIP_TEXT | ConvertFrom-Json
+        $json = $obj | ConvertTo-Json -Depth 100
+        Write-Host -NoNewline $json
+      } catch {
+        Write-Host -NoNewline "[JSON 解析失败: 语法格式有误]"
+      }
+    requirements: [text]
+    after: paste-result
+
+  - title: 压缩 JSON
+    identifier: minify
+    shell script: |
+      try {
+        $obj = $env:FLYCLIP_TEXT | ConvertFrom-Json
+        $json = $obj | ConvertTo-Json -Compress -Depth 100
+        Write-Host -NoNewline $json
+      } catch {
+        Write-Host -NoNewline "[JSON 解析失败: 语法格式有误]"
+      }
+    requirements: [text]
+    after: paste-result

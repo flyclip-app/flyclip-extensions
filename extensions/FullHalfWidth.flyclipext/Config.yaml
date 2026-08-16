@@ -1,0 +1,38 @@
+name: 全角半角转换
+identifier: com.flyclip.extension.full-half-width
+description:
+  en: Convert between Full-width and Half-width characters
+  zh: 全角字符与半角字符相互转换
+icon: 全半
+actions:
+  - title: 全角转半角 (Full to Half)
+    identifier: to_half
+    shell script: |
+      $chars = $env:FLYCLIP_TEXT.ToCharArray()
+      for ($i = 0; $i -lt $chars.Length; $i++) {
+        $c = [int]$chars[$i]
+        if ($c -eq 12288) {
+          $chars[$i] = [char]32
+        } elseif ($c -ge 65281 -and $c -le 65374) {
+          $chars[$i] = [char]($c - 65248)
+        }
+      }
+      Write-Host -NoNewline (New-Object String(,$chars))
+    requirements: [text]
+    after: paste-result
+
+  - title: 半角转全角 (Half to Full)
+    identifier: to_full
+    shell script: |
+      $chars = $env:FLYCLIP_TEXT.ToCharArray()
+      for ($i = 0; $i -lt $chars.Length; $i++) {
+        $c = [int]$chars[$i]
+        if ($c -eq 32) {
+          $chars[$i] = [char]12288
+        } elseif ($c -ge 33 -and $c -le 126) {
+          $chars[$i] = [char]($c + 65248)
+        }
+      }
+      Write-Host -NoNewline (New-Object String(,$chars))
+    requirements: [text]
+    after: paste-result

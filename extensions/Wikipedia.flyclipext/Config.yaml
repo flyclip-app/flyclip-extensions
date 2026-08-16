@@ -1,0 +1,34 @@
+name: Wikipedia
+identifier: com.flyclip.extension.wikipedia
+description:
+  en: Search Wikipedia for selected text
+  zh: 在维基百科中搜索选中文本
+icon: iconify:simple-icons:wikipedia
+options:
+  - identifier: lang
+    label:
+      en: Language Edition
+      zh: 语言版本
+    type: multiple
+    values:
+      - zh
+      - en
+      - ja
+      - de
+      - fr
+      - es
+      - ru
+    value labels:
+      - 中文 (zh)
+      - English (en)
+      - 日本語 (ja)
+      - Deutsch (de)
+      - Français (fr)
+      - Español (es)
+      - Русский (ru)
+    default value: zh
+
+actions:
+  - title: Wikipedia
+    url: https://{flyclip option lang}.wikipedia.org/wiki/{flyclip text}
+    requirements: [text]

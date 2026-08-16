@@ -1,0 +1,26 @@
+name: 豆瓣搜索
+identifier: com.flyclip.extension.douban-search
+description:
+  en: Search movies, books, and music on Douban
+  zh: 在豆瓣搜索电影、图书、音乐与条目
+icon: iconify:simple-icons:douban
+options:
+  - identifier: cat
+    label:
+      en: Category
+      zh: 搜索分类
+    type: multiple
+    values:
+      - "1001"
+      - "1002"
+      - "1003"
+    value labels:
+      - 电影 (Movie)
+      - 图书 (Book)
+      - 音乐 (Music)
+    default value: "1001"
+
+actions:
+  - title: 豆瓣
+    url: https://www.douban.com/search?cat={flyclip option cat}&q=***
+    requirements: [text]

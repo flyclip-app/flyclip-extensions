@@ -1,0 +1,18 @@
+name: Text Statistics
+identifier: com.flyclip.extension.text-statistics
+description:
+  en: Count words, characters, lines, and bytes in selected text
+  zh: 统计选中文本的字数、字符数、行数及字节大小
+icon: 123
+actions:
+  - title: 字数统计
+    identifier: stats
+    shell script: |
+      $text = $env:FLYCLIP_TEXT
+      $chars = $text.Length
+      $lines = ($text -split "`r`n|`r|`n").Length
+      $words = ($text -split '\s+' | Where-Object { $_ }).Length
+      $bytes = [System.Text.Encoding]::UTF8.GetByteCount($text)
+      Write-Host -NoNewline "$chars 字符 · $words 词 · $lines 行 · $bytes B"
+    requirements: [text]
+    after: show-result

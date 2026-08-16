@@ -1,0 +1,10 @@
+name: Youdao Dictionary
+identifier: com.flyclip.extension.youdao-dict
+description:
+  en: Look up words in Youdao Dictionary
+  zh: 有道词典划词查词与翻译
+icon: 有道
+actions:
+  - title: 有道词典
+    url: https://dict.youdao.com/search?q={flyclip text}
+    requirements: [text]

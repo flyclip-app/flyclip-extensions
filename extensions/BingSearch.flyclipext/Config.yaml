@@ -1,0 +1,10 @@
+name: Bing Search
+identifier: com.flyclip.extension.bing-search
+description:
+  en: Search with Microsoft Bing
+  zh: 使用微软 Bing 必应搜索
+icon: iconify:simple-icons:microsoftbing
+actions:
+  - title: Bing
+    url: https://www.bing.com/search?q=***
+    requirements: [text]
