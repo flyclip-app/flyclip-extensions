@@ -1,0 +1,34 @@
+name: STranslate 翻译
+identifier: com.flyclip.extension.stranslate
+description: 发送选中文本到 Windows 开源神器 STranslate 进行深度即时翻译
+icon: ST
+platforms: [windows] # 明确标记 Windows 平台，方便多设备 WebDAV 同步时按需启用
+options:
+  - identifier: trigger_mode
+    label: 唤起方式
+    type: multiple
+    values: [http, cli]
+    value labels: [本地 HTTP 服务, 命令行 CLI 唤起]
+    default value: http
+  - identifier: port
+    label: HTTP 服务端口
+    type: string
+    default value: "50020"
+
+actions:
+  - title: STranslate
+    javascript: |
+      const text = flyclip.input.text.trim();
+      const mode = flyclip.options.trigger_mode || "http";
+      const port = flyclip.options.port || "50020";
+
+      if (mode === "http") {
+        try {
+          await flyclip.fetch(`http://127.0.0.1:${port}/text?content=${encodeURIComponent(text)}`);
+        } catch (e) {
+          flyclip.run("stranslate", ["-t", text]);
+        }
+      } else {
+        flyclip.run("stranslate", ["-t", text]);
+      }
+    requirements: [text]

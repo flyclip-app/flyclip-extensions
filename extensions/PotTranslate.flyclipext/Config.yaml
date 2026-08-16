@@ -1,0 +1,33 @@
+name: Pot 划词翻译
+identifier: com.flyclip.extension.pot-desktop
+description: 发送选中文本到 Pot Desktop 进行即时划词翻译或 OCR
+icon: iconify:simple-icons:googletranslate
+options:
+  - identifier: port
+    label: Pot 本地服务端口
+    type: string
+    default value: "60828"
+  - identifier: action_type
+    label: 触发模式
+    type: multiple
+    values: [translate, ocr, recognize]
+    value labels: [翻译 (Translate), 截图 OCR, 文本识别]
+    default value: translate
+
+actions:
+  - title: Pot 翻译
+    javascript: |
+      const text = flyclip.input.text.trim();
+      const port = flyclip.options.port || "60828";
+      // 发送本地 HTTP 请求到 Pot Desktop API
+      try {
+        await flyclip.fetch(`http://127.0.0.1:${port}/api/translate`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text })
+        });
+      } catch (e) {
+        // 回退为 protocol 呼出
+        flyclip.run("cmd", ["/c", "start", `pot:translate?text=${encodeURIComponent(text)}`]);
+      }
+    requirements: [text]
