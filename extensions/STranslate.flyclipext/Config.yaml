@@ -28,11 +28,14 @@ actions:
 
       if (mode === "http") {
         try {
-          await flyclip.fetch(`http://127.0.0.1:${port}/text?content=${encodeURIComponent(text)}`);
+          await flyclip.fetch(`http://127.0.0.1:${port}/translate_force`, {
+            method: "POST",
+            body: text
+          });
         } catch (e) {
-          flyclip.run("stranslate", ["-t", text]);
+          flyclip.run("STranslate", ["-t", text]);
         }
       } else {
-        flyclip.run("stranslate", ["-t", text]);
+        flyclip.run("STranslate", ["-t", text]);
       }
     requirements: [text]

@@ -23,15 +23,25 @@ actions:
     javascript: |
       const text = flyclip.input.text.trim();
       const port = flyclip.options.port || "60828";
-      // 发送本地 HTTP 请求到 Pot Desktop API
+      const action = flyclip.options.action_type || "translate";
+
+      // 官方标准 API：POST / 或 POST /translate (Body 为待翻译纯文本)
       try {
-        await flyclip.fetch(`http://127.0.0.1:${port}/api/translate`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text })
-        });
+        if (action === "ocr") {
+          await flyclip.fetch(`http://127.0.0.1:${port}/ocr_recognize`);
+        } else if (action === "recognize") {
+          await flyclip.fetch(`http://127.0.0.1:${port}/ocr_translate`);
+        } else {
+          await flyclip.fetch(`http://127.0.0.1:${port}/`, {
+            method: "POST",
+            body: text
+          });
+        }
       } catch (e) {
-        // 回退为 protocol 呼出
-        flyclip.run("cmd", ["/c", "start", `pot:translate?text=${encodeURIComponent(text)}`]);
+        try {
+          await flyclip.fetch(`http://127.0.0.1:${port}/selection_translate`);
+        } catch (_) {
+          flyclip.run("cmd", ["/c", "start", `pot:translate?text=${encodeURIComponent(text)}`]);
+        }
       }
     requirements: [text]
