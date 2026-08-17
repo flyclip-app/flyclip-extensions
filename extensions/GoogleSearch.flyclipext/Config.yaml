@@ -1,8 +1,10 @@
-name: Google Search
-identifier: com.flyclip.extension.google-search
+name:
+  en: Google Search
+  zh-CN: Google 搜索
 description:
-  en: Search the web with Google
-  zh: 使用 Google 搜索选中文本
+  en: Search the web with Google Search.
+  zh-CN: 使用 Google 搜索选中的关键词。
+identifier: com.flyclip.extension.google-search
 icon: iconify:simple-icons:google
 options:
   - identifier: site

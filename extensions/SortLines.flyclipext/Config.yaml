@@ -1,8 +1,10 @@
-name: Sort Lines
-identifier: com.flyclip.extension.sort-lines
+name:
+  en: Sort Lines
+  zh-CN: 文本行排序与去重
 description:
-  en: Sort lines of text alphabetically, reversely, or remove duplicates
-  zh: 多行文本按字母顺序升序、降序排序或去重
+  en: Sort lines ascending, descending, or remove duplicate lines.
+  zh-CN: 多行文本升序、降序排序与行去重。
+identifier: com.flyclip.extension.sort-lines
 icon: AZ
 options:
   - identifier: case_sensitive

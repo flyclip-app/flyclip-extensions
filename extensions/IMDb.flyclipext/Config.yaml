@@ -1,8 +1,10 @@
-name: IMDb
-identifier: com.flyclip.extension.imdb
+name:
+  en: IMDb
+  zh-CN: IMDb 影视资料
 description:
-  en: Search movies, TV shows, and celebrities on IMDb
-  zh: 在 IMDb 搜索电影、剧集与演员资料
+  en: Search movies, TV shows, and cast on IMDb.
+  zh-CN: 在 IMDb 数据库搜索电影、剧集与演员资料。
+identifier: com.flyclip.extension.imdb
 icon: iconify:simple-icons:imdb
 actions:
   - title: IMDb

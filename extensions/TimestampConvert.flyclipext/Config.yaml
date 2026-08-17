@@ -1,8 +1,10 @@
-name: Timestamp Converter
-identifier: com.flyclip.extension.timestamp-converter
+name:
+  en: Timestamp Converter
+  zh-CN: 时间戳转换
 description:
-  en: Convert Unix timestamps to human dates, or date strings to timestamps
-  zh: Unix 时间戳与本地可读日期时间相互转换
+  en: Convert Unix epoch timestamps to local date-time strings.
+  zh-CN: Unix 时间戳转换为本地日期时间，或获取当前秒级时间戳。
+identifier: com.flyclip.extension.timestamp-converter
 icon: ⏱️
 actions:
   - title: 时间戳转日期 (To Date)

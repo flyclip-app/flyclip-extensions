@@ -1,8 +1,10 @@
-name: 百度搜索
-identifier: com.flyclip.extension.baidu-search
+name:
+  en: Baidu Search
+  zh-CN: 百度搜索
 description:
-  en: Search the web with Baidu
-  zh: 使用百度搜索选中文本
+  en: Search with Baidu Search Engine.
+  zh-CN: 使用百度搜索选中的关键词。
+identifier: com.flyclip.extension.baidu-search
 icon: iconify:simple-icons:baidu
 actions:
   - title: 百度

@@ -1,8 +1,10 @@
-name: Calculate
-identifier: com.flyclip.extension.calculate
+name:
+  en: Calculate
+  zh-CN: 即时数学计算
 description:
-  en: Evaluate mathematical expressions (e.g. 128*1024, (50+20)/3, [Math]::Sqrt(256))
-  zh: 计算选中的数学表达式
+  en: Evaluate math expressions instantly (e.g. 128*1024, (50+20)/3).
+  zh-CN: 即时计算选中的数学表达式并显示结果。
+identifier: com.flyclip.extension.calculate
 icon: "=?"
 actions:
   - title: 计算结果

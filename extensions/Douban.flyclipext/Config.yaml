@@ -1,8 +1,10 @@
-name: 豆瓣搜索
-identifier: com.flyclip.extension.douban-search
+name:
+  en: Douban Search
+  zh-CN: 豆瓣搜索
 description:
-  en: Search movies, books, and music on Douban
-  zh: 在豆瓣搜索电影、图书、音乐与条目
+  en: Search movies, books, and music on Douban.
+  zh-CN: 在豆瓣搜索高分电影、热门图书与音乐条目。
+identifier: com.flyclip.extension.douban-search
 icon: iconify:simple-icons:douban
 options:
   - identifier: cat

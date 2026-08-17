@@ -1,8 +1,10 @@
-name: URL Encode
-identifier: com.flyclip.extension.url-encode
+name:
+  en: URL Encode
+  zh-CN: URL 编解码
 description:
-  en: Percent-encode or decode URL strings
-  zh: URL 编码与解码转换
+  en: Percent-encode and decode URL parameters.
+  zh-CN: URL 百分号编码与反向解码。
+identifier: com.flyclip.extension.url-encode
 icon: "%20"
 actions:
   - title: URL 编码

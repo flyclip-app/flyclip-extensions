@@ -1,8 +1,10 @@
-name: Baidu Translate
-identifier: com.flyclip.extension.baidu-translate
+name:
+  en: Baidu Translate
+  zh-CN: 百度翻译
 description:
-  en: Translate selected text with Baidu Translate
-  zh: 使用百度翻译选中的文本
+  en: Translate text with Baidu Translate.
+  zh-CN: 使用百度翻译引擎翻译选中文本。
+identifier: com.flyclip.extension.baidu-translate
 icon: iconify:simple-icons:baidu
 options:
   - identifier: target_lang

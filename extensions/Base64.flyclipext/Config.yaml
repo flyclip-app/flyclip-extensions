@@ -1,8 +1,10 @@
-name: Base64
-identifier: com.flyclip.extension.base64
+name:
+  en: Base64
+  zh-CN: Base64 编解码
 description:
-  en: Encode or decode text with Base64
-  zh: Base64 编码与解码转换
+  en: Encode or decode Base64 strings with optional URL-safe mode.
+  zh-CN: Base64 快速编码与解码，支持 URL 安全模式开关。
+identifier: com.flyclip.extension.base64
 icon: B64
 options:
   - identifier: url_safe

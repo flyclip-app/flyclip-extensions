@@ -1,8 +1,10 @@
-name: Youdao Dictionary
-identifier: com.flyclip.extension.youdao-dict
+name:
+  en: Youdao Dictionary
+  zh-CN: 有道词典
 description:
-  en: Look up words in Youdao Dictionary
-  zh: 有道词典划词查词与翻译
+  en: Look up words in Youdao Dictionary.
+  zh-CN: 有道词典划词查词与权威翻译释义。
+identifier: com.flyclip.extension.youdao-dict
 icon: 有道
 actions:
   - title: 有道词典

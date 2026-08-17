@@ -1,6 +1,10 @@
-name: Pot 划词翻译
+name:
+  en: Pot Translate
+  zh-CN: Pot 划词翻译
+description:
+  en: Send selected text to Pot Desktop via local HTTP API for instant translation/OCR.
+  zh-CN: 通过本地 HTTP 服务将选中文本发送至 Pot Desktop 进行划词翻译或 OCR。
 identifier: com.flyclip.extension.pot-desktop
-description: 发送选中文本到 Pot Desktop 进行即时划词翻译或 OCR
 icon: iconify:simple-icons:googletranslate
 options:
   - identifier: port

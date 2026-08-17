@@ -1,8 +1,10 @@
-name: Urban Dictionary
-identifier: com.flyclip.extension.urban-dictionary
+name:
+  en: Urban Dictionary
+  zh-CN: Urban 俚语词典
 description:
-  en: Look up slang and idioms on Urban Dictionary
-  zh: 在 Urban Dictionary 查询英语俚语与俗语
+  en: Look up slang and idioms on Urban Dictionary.
+  zh-CN: 在 Urban Dictionary 查询英语流行俚语与俗语含义。
+identifier: com.flyclip.extension.urban-dictionary
 icon: UD
 actions:
   - title: Urban Dict

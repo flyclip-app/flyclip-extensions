@@ -1,8 +1,10 @@
-name: IP Lookup
-identifier: com.flyclip.extension.ip-lookup
+name:
+  en: IP Lookup
+  zh-CN: IP 归属地查询
 description:
-  en: Look up IP address geolocation and WHOIS information
-  zh: 查询 IP 地址归属地与 WHOIS 信息
+  en: Query IP address geolocation and WHOIS info.
+  zh-CN: 查询 IP 地址的地理位置、归属地与网络 ASN 信息。
+identifier: com.flyclip.extension.ip-lookup
 icon: IP
 options:
   - identifier: provider

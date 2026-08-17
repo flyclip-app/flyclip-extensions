@@ -1,8 +1,10 @@
-name: Iconify Search
-identifier: com.flyclip.extension.iconify-search
+name:
+  en: Iconify Icons
+  zh-CN: Iconify 矢量图标
 description:
-  en: Search 200,000+ vector icons on Iconify
-  zh: 在 Iconify 搜索超过 20 万个开源矢量图标
+  en: Search 200,000+ open source vector icons on Iconify.
+  zh-CN: 在 Iconify 搜索超过 20 万个开源矢量图标与 SVG 代码。
+identifier: com.flyclip.extension.iconify-search
 icon: iconify:simple-icons:iconify
 actions:
   - title: Iconify

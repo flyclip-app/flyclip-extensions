@@ -1,8 +1,10 @@
-name: Regex101
-identifier: com.flyclip.extension.regex101
+name:
+  en: Regex101
+  zh-CN: Regex101 正则测试
 description:
-  en: Test and explain regular expressions in Regex101
-  zh: 在 Regex101 中测试与解析正则表达式
+  en: Test and debug regular expressions in Regex101.
+  zh-CN: 在 Regex101 中测试并分析正则表达式。
+identifier: com.flyclip.extension.regex101
 icon: ".*"
 options:
   - identifier: flavor

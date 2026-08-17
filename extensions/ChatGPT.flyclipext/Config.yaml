@@ -1,8 +1,10 @@
-name: ChatGPT
-identifier: com.flyclip.extension.chatgpt
+name:
+  en: ChatGPT
+  zh-CN: ChatGPT
 description:
-  en: Ask ChatGPT with selected text
-  zh: 发送选中文本给 ChatGPT 进行提问或分析
+  en: Ask ChatGPT or analyze text with OpenAI.
+  zh-CN: 快速将选中文本发送给 ChatGPT 进行提问或智能分析。
+identifier: com.flyclip.extension.chatgpt
 icon: iconify:simple-icons:openai
 actions:
   - title: ChatGPT

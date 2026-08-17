@@ -1,8 +1,10 @@
-name: GitHub Search
-identifier: com.flyclip.extension.github-search
+name:
+  en: GitHub Search
+  zh-CN: GitHub 搜索
 description:
-  en: Search repositories, code, and issues on GitHub
-  zh: 在 GitHub 上搜索开源项目仓库、代码或 Issue
+  en: Search repositories, code, and issues on GitHub.
+  zh-CN: 在 GitHub 搜索开源仓库、源码片段或 Issue 问题。
+identifier: com.flyclip.extension.github-search
 icon: iconify:simple-icons:github
 options:
   - identifier: search_type

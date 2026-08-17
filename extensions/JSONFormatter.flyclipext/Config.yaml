@@ -1,8 +1,10 @@
-name: JSON Formatter
-identifier: com.flyclip.extension.json-formatter
+name:
+  en: JSON Formatter
+  zh-CN: JSON 格式化
 description:
-  en: Format (prettify) or compress (minify) JSON text
-  zh: 格式化美化 JSON 或压缩单行 JSON
+  en: Prettify or minify JSON text in place.
+  zh-CN: JSON 格式化美化排版或单行压缩。
+identifier: com.flyclip.extension.json-formatter
 icon: "{}"
 actions:
   - title: 格式化 JSON

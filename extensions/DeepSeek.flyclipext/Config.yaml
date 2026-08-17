@@ -1,8 +1,10 @@
-name: DeepSeek
-identifier: com.flyclip.extension.deepseek
+name:
+  en: DeepSeek
+  zh-CN: DeepSeek 深度求索
 description:
-  en: Ask DeepSeek AI with selected text
-  zh: 发送选中文本给 DeepSeek 深度求索 AI
+  en: Ask DeepSeek AI with selected text.
+  zh-CN: 发送选中文本给 DeepSeek 深度求索 AI 助手分析。
+identifier: com.flyclip.extension.deepseek
 icon: DS
 actions:
   - title: DeepSeek

@@ -1,8 +1,10 @@
-name: DeepL Translate
-identifier: com.flyclip.extension.deepl-translate
+name:
+  en: DeepL Translate
+  zh-CN: DeepL 翻译
 description:
-  en: Translate selected text with DeepL
-  zh: 使用 DeepL 翻译选中的文本
+  en: High-accuracy neural machine translation with DeepL.
+  zh-CN: 使用 DeepL 神经网络高质量翻译选中文本。
+identifier: com.flyclip.extension.deepl-translate
 icon: iconify:simple-icons:deepl
 options:
   - identifier: target_lang

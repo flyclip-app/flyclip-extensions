@@ -1,8 +1,10 @@
-name: Hash Generator
-identifier: com.flyclip.extension.hash-generator
+name:
+  en: Hash Generator
+  zh-CN: 哈希值计算
 description:
-  en: Calculate MD5, SHA-256, SHA-1, and SHA-512 hashes
-  zh: 计算文本的 MD5、SHA-256、SHA-1 或 SHA-512 哈希摘要
+  en: Calculate MD5 and SHA-256 hashes of selected text.
+  zh-CN: 快速计算文本的 MD5 与 SHA-256 哈希值。
+identifier: com.flyclip.extension.hash-generator
 icon: "#"
 options:
   - identifier: uppercase

@@ -1,8 +1,10 @@
-name: Remove Spaces
-identifier: com.flyclip.extension.remove-spaces
+name:
+  en: Remove Spaces
+  zh-CN: 清除多余空格
 description:
-  en: Remove all whitespace or collapse consecutive spaces
-  zh: 删除所有空格或压缩多余空白字符
+  en: Collapse duplicate spaces or strip all whitespace characters.
+  zh-CN: 消除所有多余空格或压缩连续空白字符。
+identifier: com.flyclip.extension.remove-spaces
 icon: "␣"
 actions:
   - title: 压缩空格

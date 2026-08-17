@@ -1,8 +1,10 @@
-name: Bing Search
-identifier: com.flyclip.extension.bing-search
+name:
+  en: Bing Search
+  zh-CN: 必应搜索
 description:
-  en: Search with Microsoft Bing
-  zh: 使用微软 Bing 必应搜索
+  en: Search with Microsoft Bing.
+  zh-CN: 使用微软必应 Bing 搜索选中文本。
+identifier: com.flyclip.extension.bing-search
 icon: iconify:simple-icons:microsoftbing
 actions:
   - title: Bing

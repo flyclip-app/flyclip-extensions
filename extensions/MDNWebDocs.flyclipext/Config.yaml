@@ -1,8 +1,10 @@
-name: MDN Web Docs
-identifier: com.flyclip.extension.mdn-web-docs
+name:
+  en: MDN Web Docs
+  zh-CN: MDN 开发者文档
 description:
-  en: Search MDN Web Docs documentation
-  zh: 搜索 MDN Web Docs 开发者文档
+  en: Search web APIs, HTML, CSS, and JS reference docs on MDN.
+  zh-CN: 搜索 MDN Web Docs 权威开发者文档与 API 规范。
+identifier: com.flyclip.extension.mdn-web-docs
 icon: MDN
 options:
   - identifier: locale

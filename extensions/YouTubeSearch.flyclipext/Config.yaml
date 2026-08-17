@@ -1,8 +1,10 @@
-name: YouTube
-identifier: com.flyclip.extension.youtube-search
+name:
+  en: YouTube Search
+  zh-CN: YouTube
 description:
-  en: Search videos on YouTube
-  zh: 在 YouTube 上搜索视频
+  en: Search videos on YouTube.
+  zh-CN: 在 YouTube 上搜索全球精彩视频。
+identifier: com.flyclip.extension.youtube-search
 icon: iconify:simple-icons:youtube
 actions:
   - title: YouTube

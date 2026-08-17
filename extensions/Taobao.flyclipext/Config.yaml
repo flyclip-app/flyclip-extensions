@@ -1,8 +1,10 @@
-name: 淘宝搜索
-identifier: com.flyclip.extension.taobao-search
+name:
+  en: Taobao Search
+  zh-CN: 淘宝搜索
 description:
-  en: Search products on Taobao
-  zh: 在淘宝网搜索选中的商品宝贝
+  en: Search items and deals on Taobao.
+  zh-CN: 在淘宝网搜索选中的商品宝贝与优惠。
+identifier: com.flyclip.extension.taobao-search
 icon: iconify:simple-icons:taobao
 actions:
   - title: 淘宝

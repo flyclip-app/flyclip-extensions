@@ -1,8 +1,10 @@
-name: Markdown Tools
-identifier: com.flyclip.extension.markdown-tools
+name:
+  en: Markdown Tools
+  zh-CN: Markdown 格式化
 description:
-  en: Quick Markdown formatting (Bold, Italic, Code, Blockquote, Link)
-  zh: 快捷 Markdown 格式化 (粗体、斜体、行内代码、代码块、引用、超链接)
+  en: Wrap text in Markdown bold, inline code, code blocks, or blockquotes.
+  zh-CN: 快速为选中文本添加 Markdown 粗体、行内代码、代码块或引用标记。
+identifier: com.flyclip.extension.markdown-tools
 icon: MD
 actions:
   - title: 粗体 (**text**)

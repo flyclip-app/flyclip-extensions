@@ -1,8 +1,10 @@
-name: 全角半角转换
-identifier: com.flyclip.extension.full-half-width
+name:
+  en: Full/Half Width
+  zh-CN: 全角半角转换
 description:
-  en: Convert between Full-width and Half-width characters
-  zh: 全角字符与半角字符相互转换
+  en: Convert between Full-width and Half-width characters.
+  zh-CN: 全角标点字符与半角英文字符双向转换。
+identifier: com.flyclip.extension.full-half-width
 icon: 全半
 actions:
   - title: 全角转半角 (Full to Half)

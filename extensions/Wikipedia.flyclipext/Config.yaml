@@ -1,8 +1,10 @@
-name: Wikipedia
-identifier: com.flyclip.extension.wikipedia
+name:
+  en: Wikipedia
+  zh-CN: 维基百科
 description:
-  en: Search Wikipedia for selected text
-  zh: 在维基百科中搜索选中文本
+  en: Search Wikipedia encyclopedia in multiple languages.
+  zh-CN: 在维基百科中搜索选中文本词条。
+identifier: com.flyclip.extension.wikipedia
 icon: iconify:simple-icons:wikipedia
 options:
   - identifier: lang

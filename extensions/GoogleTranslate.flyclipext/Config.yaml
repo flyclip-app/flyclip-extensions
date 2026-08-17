@@ -1,8 +1,10 @@
-name: Google Translate
-identifier: com.flyclip.extension.google-translate
+name:
+  en: Google Translate
+  zh-CN: Google 翻译
 description:
-  en: Translate selected text with Google Translate
-  zh: 使用 Google 翻译选中的文本
+  en: Translate selected text with Google Translate worldwide.
+  zh-CN: 使用 Google 翻译选中文本，支持多站点切换与目标语言设定。
+identifier: com.flyclip.extension.google-translate
 icon: iconify:simple-icons:googletranslate
 options:
   - identifier: site

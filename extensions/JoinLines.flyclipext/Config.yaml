@@ -1,8 +1,10 @@
-name: Join Lines
-identifier: com.flyclip.extension.join-lines
+name:
+  en: Join Lines
+  zh-CN: 多行合并为单行
 description:
-  en: Join multi-line text into a single line with custom delimiter
-  zh: 将多行文本合并为单行，支持指定分隔符
+  en: Join multi-line text into a single line with custom delimiters.
+  zh-CN: 多行合并为单行，支持指定逗号、空格、分号等分隔符。
+identifier: com.flyclip.extension.join-lines
 icon: ->
 options:
   - identifier: delimiter

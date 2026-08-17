@@ -1,8 +1,10 @@
-name: 哔哩哔哩
-identifier: com.flyclip.extension.bilibili-search
+name:
+  en: Bilibili Search
+  zh-CN: 哔哩哔哩
 description:
-  en: Search videos and content on Bilibili
-  zh: 在哔哩哔哩 (Bilibili) 搜索视频与UP主
+  en: Search anime, tutorials, and creators on Bilibili.
+  zh-CN: 在哔哩哔哩搜索精选视频、教程与UP主。
+identifier: com.flyclip.extension.bilibili-search
 icon: iconify:simple-icons:bilibili
 actions:
   - title: 哔哩哔哩

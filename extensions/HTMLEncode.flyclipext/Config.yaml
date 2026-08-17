@@ -1,8 +1,10 @@
-name: HTML Encode
-identifier: com.flyclip.extension.html-encode
+name:
+  en: HTML Encode
+  zh-CN: HTML 实体转义
 description:
-  en: Encode or decode HTML special entities (&lt;, &gt;, &amp;, etc.)
-  zh: HTML 实体编码与反转义解码
+  en: Encode or decode HTML special character entities.
+  zh-CN: HTML 特殊实体符号转义与反转义。
+identifier: com.flyclip.extension.html-encode
 icon: <&>
 actions:
   - title: HTML 转义

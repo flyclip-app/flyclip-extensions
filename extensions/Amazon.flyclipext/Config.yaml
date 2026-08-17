@@ -1,8 +1,10 @@
-name: Amazon
-identifier: com.flyclip.extension.amazon
+name:
+  en: Amazon
+  zh-CN: 亚马逊商城
 description:
-  en: Search products on Amazon worldwide
-  zh: 在全球各站点 Amazon 亚马逊搜索商品
+  en: Search Amazon worldwide with site selection.
+  zh-CN: 在全球 Amazon 亚马逊商城（美/中/日/英/德）搜索商品。
+identifier: com.flyclip.extension.amazon
 icon: iconify:simple-icons:amazon
 options:
   - identifier: site

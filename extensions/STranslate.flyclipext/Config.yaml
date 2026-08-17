@@ -1,6 +1,10 @@
-name: STranslate 翻译
+name:
+  en: STranslate
+  zh-CN: STranslate 翻译
+description:
+  en: Trigger Windows open-source STranslate tool for deep translation.
+  zh-CN: 通过本地服务或命令行调用 Windows 开源神器 STranslate 进行即时翻译。
 identifier: com.flyclip.extension.stranslate
-description: 发送选中文本到 Windows 开源神器 STranslate 进行深度即时翻译
 icon: ST
 platforms: [windows] # 明确标记 Windows 平台，方便多设备 WebDAV 同步时按需启用
 options:

@@ -1,8 +1,10 @@
-name: Text Statistics
-identifier: com.flyclip.extension.text-statistics
+name:
+  en: Text Statistics
+  zh-CN: 字数与文本统计
 description:
-  en: Count words, characters, lines, and bytes in selected text
-  zh: 统计选中文本的字数、字符数、行数及字节大小
+  en: Count characters, words, lines, and bytes in selected text.
+  zh-CN: 实时统计字符数、词数、行数与字节大小并展示于提示栏。
+identifier: com.flyclip.extension.text-statistics
 icon: 123
 actions:
   - title: 字数统计

@@ -1,8 +1,10 @@
-name: Case Converter
-identifier: com.flyclip.extension.case-converter
+name:
+  en: Case Converter
+  zh-CN: 大小写转换
 description:
-  en: Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and kebab-case
-  zh: 在大写、小写、词首大写、驼峰、下划线、短横线等命名格式之间快速转换
+  en: Convert text between UPPER, lower, Title, camelCase, snake_case, kebab-case.
+  zh-CN: 全能大小写命名风格转换（大写/小写/词首/小驼峰/下划线/连字符）。
+identifier: com.flyclip.extension.case-converter
 icon: Aa
 actions:
   - title: 大写 (UPPER)
