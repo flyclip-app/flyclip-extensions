@@ -7,28 +7,33 @@ icon: ⏱️
 actions:
   - title: 时间戳转日期 (To Date)
     identifier: to_date
-    shell script: |
-      $s = $env:FLYCLIP_TEXT.Trim()
-      try {
-        if ($s -match '^\d{10}$') {
-          $epoch = [DateTimeOffset]::FromUnixTimeSeconds([int64]$s).ToLocalTime()
-          Write-Host -NoNewline ($epoch.ToString("yyyy-MM-dd HH:mm:ss"))
-        } elseif ($s -match '^\d{13}$') {
-          $epoch = [DateTimeOffset]::FromUnixTimeMilliseconds([int64]$s).ToLocalTime()
-          Write-Host -NoNewline ($epoch.ToString("yyyy-MM-dd HH:mm:ss.fff"))
-        } else {
-          Write-Host -NoNewline "[无效的时间戳: 需为 10 位秒级或 13 位毫秒级数字]"
-        }
-      } catch {
-        Write-Host -NoNewline "[转换失败]"
+    javascript: |
+      const s = flyclip.input.text.trim();
+      if (/^\d{10}$/.test(s)) {
+        const d = new Date(parseInt(s, 10) * 1000);
+        return d.getFullYear() + '-' +
+          String(d.getMonth() + 1).padStart(2, '0') + '-' +
+          String(d.getDate()).padStart(2, '0') + ' ' +
+          String(d.getHours()).padStart(2, '0') + ':' +
+          String(d.getMinutes()).padStart(2, '0') + ':' +
+          String(d.getSeconds()).padStart(2, '0');
+      } else if (/^\d{13}$/.test(s)) {
+        const d = new Date(parseInt(s, 10));
+        return d.getFullYear() + '-' +
+          String(d.getMonth() + 1).padStart(2, '0') + '-' +
+          String(d.getDate()).padStart(2, '0') + ' ' +
+          String(d.getHours()).padStart(2, '0') + ':' +
+          String(d.getMinutes()).padStart(2, '0') + ':' +
+          String(d.getSeconds()).padStart(2, '0') + '.' +
+          String(d.getMilliseconds()).padStart(3, '0');
+      } else {
+        return "[无效的时间戳: 需为 10 位秒级或 13 位毫秒级数字]";
       }
     requirements: [text]
     after: paste-result
 
   - title: 当前时间戳 (Now)
     identifier: now
-    shell script: |
-      $sec = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
-      Write-Host -NoNewline "$sec"
+    javascript: return Math.floor(Date.now() / 1000).toString();
     requirements: [text]
     after: paste-result

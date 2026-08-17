@@ -7,26 +7,24 @@ icon: "{}"
 actions:
   - title: 格式化 JSON
     identifier: format
-    shell script: |
+    javascript: |
       try {
-        $obj = $env:FLYCLIP_TEXT | ConvertFrom-Json
-        $json = $obj | ConvertTo-Json -Depth 100
-        Write-Host -NoNewline $json
-      } catch {
-        Write-Host -NoNewline "[JSON 解析失败: 语法格式有误]"
+        const obj = JSON.parse(flyclip.input.text);
+        return JSON.stringify(obj, null, 2);
+      } catch (e) {
+        return "[JSON 解析失败: 语法格式有误]";
       }
     requirements: [text]
     after: paste-result
 
   - title: 压缩 JSON
     identifier: minify
-    shell script: |
+    javascript: |
       try {
-        $obj = $env:FLYCLIP_TEXT | ConvertFrom-Json
-        $json = $obj | ConvertTo-Json -Compress -Depth 100
-        Write-Host -NoNewline $json
-      } catch {
-        Write-Host -NoNewline "[JSON 解析失败: 语法格式有误]"
+        const obj = JSON.parse(flyclip.input.text);
+        return JSON.stringify(obj);
+      } catch (e) {
+        return "[JSON 解析失败: 语法格式有误]";
       }
     requirements: [text]
     after: paste-result

@@ -7,13 +7,13 @@ icon: "=?"
 actions:
   - title: 计算结果
     identifier: eval
-    shell script: |
+    javascript: |
+      const expr = flyclip.input.text.trim();
       try {
-        $expr = $env:FLYCLIP_TEXT.Trim()
-        $result = Invoke-Expression $expr
-        Write-Host -NoNewline "$expr = $result"
-      } catch {
-        Write-Host -NoNewline "[计算出错: 表达式无效]"
+        const res = Function(`'use strict'; return (${expr})`)();
+        return `${expr} = ${res}`;
+      } catch (e) {
+        return "[计算出错: 表达式无效]";
       }
     requirements: [text]
     after: show-result

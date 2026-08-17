@@ -7,32 +7,36 @@ icon: 全半
 actions:
   - title: 全角转半角 (Full to Half)
     identifier: to_half
-    shell script: |
-      $chars = $env:FLYCLIP_TEXT.ToCharArray()
-      for ($i = 0; $i -lt $chars.Length; $i++) {
-        $c = [int]$chars[$i]
-        if ($c -eq 12288) {
-          $chars[$i] = [char]32
-        } elseif ($c -ge 65281 -and $c -le 65374) {
-          $chars[$i] = [char]($c - 65248)
+    javascript: |
+      let str = "";
+      for (let i = 0; i < flyclip.input.text.length; i++) {
+        let code = flyclip.input.text.charCodeAt(i);
+        if (code === 12288) {
+          str += String.fromCharCode(32);
+        } else if (code >= 65281 && code <= 65374) {
+          str += String.fromCharCode(code - 65248);
+        } else {
+          str += flyclip.input.text[i];
         }
       }
-      Write-Host -NoNewline (New-Object String(,$chars))
+      return str;
     requirements: [text]
     after: paste-result
 
   - title: 半角转全角 (Half to Full)
     identifier: to_full
-    shell script: |
-      $chars = $env:FLYCLIP_TEXT.ToCharArray()
-      for ($i = 0; $i -lt $chars.Length; $i++) {
-        $c = [int]$chars[$i]
-        if ($c -eq 32) {
-          $chars[$i] = [char]12288
-        } elseif ($c -ge 33 -and $c -le 126) {
-          $chars[$i] = [char]($c + 65248)
+    javascript: |
+      let str = "";
+      for (let i = 0; i < flyclip.input.text.length; i++) {
+        let code = flyclip.input.text.charCodeAt(i);
+        if (code === 32) {
+          str += String.fromCharCode(12288);
+        } else if (code >= 33 && code <= 126) {
+          str += String.fromCharCode(code + 65248);
+        } else {
+          str += flyclip.input.text[i];
         }
       }
-      Write-Host -NoNewline (New-Object String(,$chars))
+      return str;
     requirements: [text]
     after: paste-result

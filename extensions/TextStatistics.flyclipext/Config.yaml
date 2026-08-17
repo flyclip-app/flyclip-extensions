@@ -7,12 +7,12 @@ icon: 123
 actions:
   - title: 字数统计
     identifier: stats
-    shell script: |
-      $text = $env:FLYCLIP_TEXT
-      $chars = $text.Length
-      $lines = ($text -split "`r`n|`r|`n").Length
-      $words = ($text -split '\s+' | Where-Object { $_ }).Length
-      $bytes = [System.Text.Encoding]::UTF8.GetByteCount($text)
-      Write-Host -NoNewline "$chars 字符 · $words 词 · $lines 行 · $bytes B"
+    javascript: |
+      const t = flyclip.input.text;
+      const chars = t.length;
+      const words = (t.match(/\S+/g) || []).length;
+      const lines = t.split(/\r\n|\r|\n/).length;
+      const bytes = new TextEncoder().encode(t).length;
+      return `${chars} 字符 · ${words} 词 · ${lines} 行 · ${bytes} B`;
     requirements: [text]
     after: show-result

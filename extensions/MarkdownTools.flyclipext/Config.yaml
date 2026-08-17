@@ -7,27 +7,28 @@ icon: MD
 actions:
   - title: 粗体 (**text**)
     identifier: bold
-    shell script: Write-Host -NoNewline ("**" + $env:FLYCLIP_TEXT + "**")
+    javascript: return `**${flyclip.input.text}**`;
     requirements: [text]
     after: paste-result
 
   - title: 行内代码 (`code`)
     identifier: inline_code
-    shell script: Write-Host -NoNewline ("`" + $env:FLYCLIP_TEXT + "`")
+    javascript: return `\`${flyclip.input.text}\``;
     requirements: [text]
     after: paste-result
 
   - title: 代码块 (```code```)
     identifier: code_block
-    shell script: Write-Host -NoNewline ("````r`n" + $env:FLYCLIP_TEXT + "`r`n```")
+    javascript: return "```\n" + flyclip.input.text + "\n```";
     requirements: [text]
     after: paste-result
 
   - title: 引用 (> quote)
     identifier: quote
-    shell script: |
-      $lines = $env:FLYCLIP_TEXT -split "`r`n|`r|`n"
-      $quoted = $lines | ForEach-Object { "> $_" }
-      Write-Host -NoNewline ($quoted -join "`r`n")
+    javascript: |
+      return flyclip.input.text
+        .split(/\r\n|\r|\n/)
+        .map(line => `> ${line}`)
+        .join("\n");
     requirements: [text]
     after: paste-result

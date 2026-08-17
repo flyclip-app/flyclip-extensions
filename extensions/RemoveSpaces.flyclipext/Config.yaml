@@ -7,16 +7,12 @@ icon: "␣"
 actions:
   - title: 压缩空格
     identifier: collapse
-    shell script: |
-      $s = [regex]::Replace($env:FLYCLIP_TEXT, '\s+', ' ')
-      Write-Host -NoNewline $s.Trim()
+    javascript: return flyclip.input.text.replace(/\s+/g, ' ').trim();
     requirements: [text]
     after: paste-result
 
   - title: 消除所有空格
     identifier: remove_all
-    shell script: |
-      $s = [regex]::Replace($env:FLYCLIP_TEXT, '\s+', '')
-      Write-Host -NoNewline $s
+    javascript: return flyclip.input.text.replace(/\s+/g, '');
     requirements: [text]
     after: paste-result

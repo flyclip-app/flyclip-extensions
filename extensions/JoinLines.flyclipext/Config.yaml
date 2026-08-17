@@ -25,14 +25,15 @@ options:
 actions:
   - title: 合并为单行
     identifier: join
-    shell script: |
-      $lines = $env:FLYCLIP_TEXT -split "`r`n|`r|`n" | Where-Object { $_.Trim() }
-      $delim = switch ($env:FLYCLIP_OPTION_DELIMITER) {
-        "comma" { "," }
-        "space" { " " }
-        "semicolon" { "; " }
-        default { ", " }
-      }
-      Write-Host -NoNewline ($lines -join $delim)
+    javascript: |
+      const lines = flyclip.input.text.split(/\r\n|\r|\n/).filter(l => l.trim().length > 0);
+      const delimMap = {
+        comma: ",",
+        space: " ",
+        semicolon: "; ",
+        comma_space: ", "
+      };
+      const delim = delimMap[flyclip.options.delimiter] || ", ";
+      return lines.join(delim);
     requirements: [text]
     after: paste-result

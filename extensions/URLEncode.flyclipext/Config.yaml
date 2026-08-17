@@ -7,15 +7,17 @@ icon: "%20"
 actions:
   - title: URL 编码
     identifier: encode
-    shell script: |
-      [System.Reflection.Assembly]::LoadWithPartialName("System.Web") | Out-Null
-      Write-Host -NoNewline ([System.Uri]::EscapeDataString($env:FLYCLIP_TEXT))
+    javascript: return encodeURIComponent(flyclip.input.text);
     requirements: [text]
     after: paste-result
 
   - title: URL 解码
     identifier: decode
-    shell script: |
-      Write-Host -NoNewline ([System.Uri]::UnescapeDataString($env:FLYCLIP_TEXT))
+    javascript: |
+      try {
+        return decodeURIComponent(flyclip.input.text);
+      } catch (e) {
+        return flyclip.input.text;
+      }
     requirements: [text]
     after: paste-result

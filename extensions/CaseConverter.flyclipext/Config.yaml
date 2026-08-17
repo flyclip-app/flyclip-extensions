@@ -7,53 +7,51 @@ icon: Aa
 actions:
   - title: 大写 (UPPER)
     identifier: uppercase
-    shell script: Write-Host -NoNewline $env:FLYCLIP_TEXT.ToUpper()
+    javascript: return flyclip.input.text.toUpperCase();
     requirements: [text]
     after: paste-result
 
   - title: 小写 (lower)
     identifier: lowercase
-    shell script: Write-Host -NoNewline $env:FLYCLIP_TEXT.ToLower()
+    javascript: return flyclip.input.text.toLowerCase();
     requirements: [text]
     after: paste-result
 
   - title: 词首大写 (Title)
     identifier: titlecase
-    shell script: |
-      $culture = [System.Globalization.CultureInfo]::CurrentCulture
-      Write-Host -NoNewline ($culture.TextInfo.ToTitleCase($env:FLYCLIP_TEXT.ToLower()))
+    javascript: return flyclip.input.text.replace(/\w\S*/g, (w) => w.charAt(0).toUpperCase() + w.substr(1).toLowerCase());
     requirements: [text]
     after: paste-result
 
   - title: 驼峰 (camelCase)
     identifier: camelcase
-    shell script: |
-      $words = [regex]::Split($env:FLYCLIP_TEXT, '[^a-zA-Z0-9]+') | Where-Object { $_ }
-      if ($words.Count -eq 0) { Write-Host -NoNewline $env:FLYCLIP_TEXT; exit }
-      $first = $words[0].ToLower()
-      $rest = $words | Select-Object -Skip 1 | ForEach-Object {
-        if ($_.Length -gt 1) { $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower() } else { $_.ToUpper() }
-      }
-      Write-Host -NoNewline ($first + ($rest -join ''))
+    javascript: |
+      const words = flyclip.input.text.split(/[^a-zA-Z0-9]+/).filter(Boolean);
+      if (words.length === 0) return flyclip.input.text;
+      const first = words[0].toLowerCase();
+      const rest = words.slice(1).map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join('');
+      return first + rest;
     requirements: [text]
     after: paste-result
 
   - title: 下划线 (snake_case)
     identifier: snakecase
-    shell script: |
-      $s = [regex]::Replace($env:FLYCLIP_TEXT, '([a-z0-9])([A-Z])', '$1_$2')
-      $s = [regex]::Replace($s, '[^a-zA-Z0-9]+', '_')
-      $s = $s.Trim('_').ToLower()
-      Write-Host -NoNewline $s
+    javascript: |
+      return flyclip.input.text
+        .replace(/([a-z0-9])([A-Z])/g, '$1_$2')
+        .replace(/[^a-zA-Z0-9]+/g, '_')
+        .replace(/^_+|_+$/g, '')
+        .toLowerCase();
     requirements: [text]
     after: paste-result
 
   - title: 连字符 (kebab-case)
     identifier: kebabcase
-    shell script: |
-      $s = [regex]::Replace($env:FLYCLIP_TEXT, '([a-z0-9])([A-Z])', '$1-$2')
-      $s = [regex]::Replace($s, '[^a-zA-Z0-9]+', '-')
-      $s = $s.Trim('-').ToLower()
-      Write-Host -NoNewline $s
+    javascript: |
+      return flyclip.input.text
+        .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+        .replace(/[^a-zA-Z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .toLowerCase();
     requirements: [text]
     after: paste-result

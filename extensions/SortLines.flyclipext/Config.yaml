@@ -15,39 +15,42 @@ options:
 actions:
   - title: 升序排序 (A-Z)
     identifier: sort_asc
-    shell script: |
-      $lines = $env:FLYCLIP_TEXT -split "`r`n|`r|`n"
-      if ($env:FLYCLIP_OPTION_CASE_SENSITIVE -eq "1") {
-        $sorted = $lines | Sort-Object -CaseSensitive
-      } else {
-        $sorted = $lines | Sort-Object
-      }
-      Write-Host -NoNewline ($sorted -join "`r`n")
+    javascript: |
+      const cs = flyclip.options.case_sensitive === "1" || flyclip.options.case_sensitive === true;
+      const lines = flyclip.input.text.split(/\r\n|\r|\n/);
+      lines.sort((a, b) => cs ? a.localeCompare(b, undefined, { sensitivity: 'case' }) : a.localeCompare(b));
+      return lines.join("\n");
     requirements: [text]
     after: paste-result
 
   - title: 降序排序 (Z-A)
     identifier: sort_desc
-    shell script: |
-      $lines = $env:FLYCLIP_TEXT -split "`r`n|`r|`n"
-      if ($env:FLYCLIP_OPTION_CASE_SENSITIVE -eq "1") {
-        $sorted = $lines | Sort-Object -CaseSensitive -Descending
-      } else {
-        $sorted = $lines | Sort-Object -Descending
-      }
-      Write-Host -NoNewline ($sorted -join "`r`n")
+    javascript: |
+      const cs = flyclip.options.case_sensitive === "1" || flyclip.options.case_sensitive === true;
+      const lines = flyclip.input.text.split(/\r\n|\r|\n/);
+      lines.sort((a, b) => cs ? b.localeCompare(a, undefined, { sensitivity: 'case' }) : b.localeCompare(a));
+      return lines.join("\n");
     requirements: [text]
     after: paste-result
 
   - title: 行去重 (Unique)
     identifier: unique
-    shell script: |
-      $lines = $env:FLYCLIP_TEXT -split "`r`n|`r|`n"
-      if ($env:FLYCLIP_OPTION_CASE_SENSITIVE -eq "1") {
-        $sorted = $lines | Select-Object -Unique -CaseSensitive
+    javascript: |
+      const cs = flyclip.options.case_sensitive === "1" || flyclip.options.case_sensitive === true;
+      const lines = flyclip.input.text.split(/\r\n|\r|\n/);
+      if (cs) {
+        return Array.from(new Set(lines)).join("\n");
       } else {
-        $sorted = $lines | Select-Object -Unique
+        const seen = new Set();
+        const result = [];
+        for (const line of lines) {
+          const lower = line.toLowerCase();
+          if (!seen.has(lower)) {
+            seen.add(lower);
+            result.push(line);
+          }
+        }
+        return result.join("\n");
       }
-      Write-Host -NoNewline ($sorted -join "`r`n")
     requirements: [text]
     after: paste-result

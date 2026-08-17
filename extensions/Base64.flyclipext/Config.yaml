@@ -15,33 +15,30 @@ options:
 actions:
   - title: Base64 编码
     identifier: encode
-    shell script: |
-      $bytes = [System.Text.Encoding]::UTF8.GetBytes($env:FLYCLIP_TEXT)
-      $b64 = [Convert]::ToBase64String($bytes)
-      if ($env:FLYCLIP_OPTION_URL_SAFE -eq "1") {
-        $b64 = $b64.Replace('+', '-').Replace('/', '_').TrimEnd('=')
+    javascript: |
+      const str = flyclip.input.text;
+      let b64 = btoa(unescape(encodeURIComponent(str)));
+      if (flyclip.options.url_safe === "1" || flyclip.options.url_safe === true) {
+        b64 = b64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
       }
-      Write-Host -NoNewline $b64
+      return b64;
     requirements: [text]
     after: paste-result
 
   - title: Base64 解码
     identifier: decode
-    shell script: |
-      $s = $env:FLYCLIP_TEXT.Trim()
-      if ($env:FLYCLIP_OPTION_URL_SAFE -eq "1") {
-        $s = $s.Replace('-', '+').Replace('_', '/')
-        switch ($s.Length % 4) {
-          2 { $s += '==' }
-          3 { $s += '=' }
+    javascript: |
+      let s = flyclip.input.text.trim();
+      if (flyclip.options.url_safe === "1" || flyclip.options.url_safe === true) {
+        s = s.replace(/-/g, '+').replace(/_/g, '/');
+        while (s.length % 4 !== 0) {
+          s += '=';
         }
       }
       try {
-        $bytes = [Convert]::FromBase64String($s)
-        $text = [System.Text.Encoding]::UTF8.GetString($bytes)
-        Write-Host -NoNewline $text
-      } catch {
-        Write-Host -NoNewline "[Base64 解码错误: 格式不合法]"
+        return decodeURIComponent(escape(atob(s)));
+      } catch (e) {
+        return "[Base64 解码错误: 格式不合法]";
       }
     requirements: [text]
     after: paste-result
