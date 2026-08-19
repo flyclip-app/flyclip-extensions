@@ -1,0 +1,15 @@
+name:
+  en: Cut
+  zh-CN: 剪切
+description:
+  en: Cut selected text to clipboard.
+  zh-CN: 剪切所选文本到剪贴板。
+identifier: com.flyclip.extension.cut
+icon: scissors
+actions:
+  - title:
+      en: Cut
+      zh-CN: 剪切
+    icon: scissors
+    command: cut
+    requirements: [cut]

@@ -90,6 +90,7 @@
 | **JoinLines** | `com.flyclip.extension.join-lines` | 多行合并为单行 | 合并为单行 \| 选项: 分隔符 (逗号空格 / 纯逗号 / 空格 / 分号) |
 | **RemoveSpaces** | `com.flyclip.extension.remove-spaces` | 空格处理 | 压缩连续空格, 消除所有空格 |
 | **FullHalfWidth** | `com.flyclip.extension.full-half-width` | 全角半角转换 | 全角转半角 (Full to Half), 半角转全角 (Half to Full) |
+| **Cut** | `com.flyclip.extension.cut` | 剪切选中文本 | 剪切选中文本到系统剪贴板 (仅在可编辑输入框/编辑器中激活) |
 | **TimestampConvert** | `com.flyclip.extension.timestamp-converter` | Unix 时间戳转换 | 10位/13位时间戳转日期, 获取当前时间戳 |
 | **MarkdownTools** | `com.flyclip.extension.markdown-tools` | 常用 Markdown 语法修饰 | 粗体 (`**text**`), 行内代码 (`` `code` ``), 代码块 (```` ```code``` ````), 引用 (`> quote`) |
 
