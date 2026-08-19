@@ -22,6 +22,27 @@
   - **密钥凭据 (Secret / Password)**：安全存储 API Key、Token。
 - **⚡ Windows 原生执行**：深度集成 PowerShell 7/5.1、系统默认浏览器及 Windows 键盘热键映射。
 - **🔄 双向语法别名支持**：原生优先使用 `FLYCLIP_*` 与 `{flyclip text}`，同时完全兼容 PopClip 的 `POPCLIP_*` 与 `{popclip text}` 语法。
+- **🤖 官方 AI 开发 Skill**：内置完整扩展开发 Skill 说明文件（[`SKILL.md`](./SKILL.md)），支持直接导入 Cursor、Claude、ChatGPT、Antigravity、Cline 等 AI 工具，一句话自动生成生产级扩展！
+
+---
+
+## 🤖 让 AI 帮你定制开发扩展 (AI Developer Skill)
+
+本项目提供专为大模型定制的 **FlyClip Extension Developer Skill**（位于 [`SKILL.md`](./SKILL.md) 或 [`skills/flyclip-extension-developer/SKILL.md`](./skills/flyclip-extension-developer/SKILL.md)）。
+
+### 如何使用 AI Skill 开发扩展？
+
+1. **在 AI 助手 (Cursor / Claude / ChatGPT / Antigravity / Windsurf / Cline) 中导入 Skill**：
+   * **方式 A（直接引用文件）**：将本项目根目录的 [`SKILL.md`](./SKILL.md) 加入 AI 的上下文规则（Context / System Prompt / Skill）。
+   * **方式 B（在线链接引用）**：向 AI 发送 Skill 链接：
+     `https://raw.githubusercontent.com/flyclip-app/flyclip-extensions/main/SKILL.md`
+2. **给 AI 发送需求 Prompt**：
+   * 💬 *"帮我写一个 FlyClip 扩展：选中文本后调用 DeepSeek API 进行文案润色，并在设置里支持配置 API Key。"*
+   * 💬 *"帮我写一个 FlyClip 扩展：选中 Commit Hash（如 7 位以上十六进制）时在浏览器打开 GitHub 提交页。"*
+   * 💬 *"帮我将这个 Python 文本清洗脚本转换成 FlyClip 的 JavaScript 扩展 Snippet。"*
+3. **一秒安装验证**：
+   * 复制 AI 生成的 `# flyclip` 开头的 YAML 代码段；
+   * 在屏幕上选中该段代码，FlyClip 会自动弹出 **「安装扩展」** 提示气泡，点击即可立即生效！
 
 ---
 
