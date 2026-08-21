@@ -1,0 +1,14 @@
+name:
+  en: Yandex Search
+  zh-CN: Yandex 搜索
+identifier: com.flyclip.extension.yandex-search
+description:
+  en: Search the web with Yandex, the leading Eastern European search engine.
+  zh-CN: 使用 Yandex 搜索引擎查找网页、俄文资源与多语言内容。
+icon: iconify:simple-icons:yandex
+actions:
+  - title: Yandex
+    url: https://yandex.com/search/?text=***
+    clean query: true
+    requirements:
+      - text

@@ -1,0 +1,14 @@
+name:
+  en: Can I Use
+  zh-CN: Can I Use 前端兼容性查询
+identifier: com.flyclip.extension.caniuse
+description:
+  en: Check browser support tables for modern HTML5, CSS3, and JavaScript APIs.
+  zh-CN: 查询 HTML5、CSS3 及现代 Web API 在各大主流浏览器的兼容性支持。
+icon: iconify:tabler:browser-check
+actions:
+  - title: Can I Use
+    url: https://caniuse.com/?search=***
+    clean query: true
+    requirements:
+      - text

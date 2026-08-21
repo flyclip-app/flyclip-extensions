@@ -1,0 +1,14 @@
+name:
+  en: Startpage Search
+  zh-CN: Startpage 匿名搜索
+identifier: com.flyclip.extension.startpage-search
+description:
+  en: Search with Google search results with total privacy protection.
+  zh-CN: 在不被记录 IP 与隐私的前提下获取 Google 高品质检索结果。
+icon: iconify:tabler:lock-square-rounded
+actions:
+  - title: Startpage
+    url: https://www.startpage.com/sp/search?query=***
+    clean query: true
+    requirements:
+      - text

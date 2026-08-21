@@ -1,0 +1,14 @@
+name:
+  en: npm Package Search
+  zh-CN: npm 开源包搜索
+identifier: com.flyclip.extension.npm-search
+description:
+  en: Search Node.js / JavaScript packages on npmjs.com.
+  zh-CN: 在 npm 官方网站快速检索 JS / TS / Node.js 开源依赖包。
+icon: iconify:simple-icons:npm
+actions:
+  - title: npm
+    url: https://www.npmjs.com/search?q=***
+    clean query: true
+    requirements:
+      - text

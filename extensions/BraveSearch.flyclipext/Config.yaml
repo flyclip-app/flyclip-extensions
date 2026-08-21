@@ -1,0 +1,14 @@
+name:
+  en: Brave Search
+  zh-CN: Brave 隐私搜索
+identifier: com.flyclip.extension.brave-search
+description:
+  en: Search the web privately using Brave independent search engine index.
+  zh-CN: 使用独立不追踪用户隐私的 Brave Search 搜索引擎。
+icon: iconify:simple-icons:brave
+actions:
+  - title: Brave Search
+    url: https://search.brave.com/search?q=***
+    clean query: true
+    requirements:
+      - text

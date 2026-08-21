@@ -1,0 +1,58 @@
+name:
+  en: Sum Numbers
+  zh-CN: 数字提取与求和
+identifier: com.flyclip.extension.sum-numbers
+description:
+  en: Find and calculate the sum, average, count, and min/max of all numbers in
+    selected text.
+  zh-CN: 自动提取选中文本中的全部数值，计算总和、均值与项数。
+icon: iconify:tabler:sum
+actions:
+  - title:
+      en: Sum (求和)
+      zh-CN: 数字求和统计
+    identifier: calc_sum
+    javascript: "
+
+      \            const text = flyclip.input.text;
+
+      \            // Match integers and floats (with optional negative sign and
+      commas)
+
+      \            const numRegex = /[-+]?\\b\\d+(?:,\\d{3})*(?:\\.\\d+)?\\b/g;
+
+      \            const matches = text.match(numRegex);
+
+
+      \            if (!matches || matches.length === 0) {
+
+      \              return \"[未在文本中发现数字]\";
+
+      \            }
+
+
+      \            const nums = matches.map(m => parseFloat(m.replace(/,/g,
+      ''))).filter(n => !isNaN(n));
+
+      \            if (nums.length === 0) return \"[未发现有效数字]\";
+
+
+      \            const sum = nums.reduce((acc, cur) => acc + cur, 0);
+
+      \            const avg = sum / nums.length;
+
+      \            const min = Math.min(...nums);
+
+      \            const max = Math.max(...nums);
+
+
+      \            const format = n => Number.isInteger(n) ? n.toString() :
+      n.toFixed(2);
+
+      \            return `求和: ${format(sum)} | 个数: ${nums.length} | 均值:
+      ${format(avg)} | 范围: [${format(min)}, ${format(max)}]`;
+
+      \          "
+    requirements:
+      - text
+    after: show-result

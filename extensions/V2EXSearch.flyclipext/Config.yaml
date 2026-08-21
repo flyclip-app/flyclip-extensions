@@ -1,0 +1,14 @@
+name:
+  en: V2EX Community
+  zh-CN: V2EX 程序员社区搜索
+identifier: com.flyclip.extension.v2ex-search
+description:
+  en: Search discussions and questions on V2EX developer community.
+  zh-CN: 在 V2EX 开发者创意社区检索主题与交流讨论。
+icon: iconify:simple-icons:v2ex
+actions:
+  - title: V2EX
+    url: https://www.google.com/search?q=site:v2ex.com/t/***
+    clean query: true
+    requirements:
+      - text

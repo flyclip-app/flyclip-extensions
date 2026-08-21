@@ -1,0 +1,22 @@
+name:
+  en: Wayback Machine Archive
+  zh-CN: Wayback Machine 网页时光机
+identifier: com.flyclip.extension.wayback-machine
+description:
+  en: View historical snapshots of the selected URL or submit a new capture to
+    Internet Archive.
+  zh-CN: 在 Internet Archive 查看该网址的历史快照存档，或提交即时网页备份。
+icon: iconify:tabler:history
+actions:
+  - title:
+      en: View History Snapshots
+      zh-CN: 查看历史快照
+    url: https://web.archive.org/web/*/{flyclip text}
+    requirements:
+      - text
+  - title:
+      en: Save to Archive Now
+      zh-CN: 立即归档快照
+    url: https://web.archive.org/save/{flyclip text}
+    requirements:
+      - text

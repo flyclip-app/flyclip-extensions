@@ -1,0 +1,14 @@
+name:
+  en: CyberChef
+  zh-CN: CyberChef 数据分析工具
+identifier: com.flyclip.extension.cyberchef
+description:
+  en: Send selected text directly into the CyberChef Cyber Swiss Army Knife for
+    advanced decoding and analysis.
+  zh-CN: 将选中文本投递到 CyberChef 网页版进行高级数据清洗、解码与逆向分析。
+icon: iconify:tabler:chef-hat
+actions:
+  - title: CyberChef
+    url: https://gchq.github.io/CyberChef/#input={flyclip text}
+    requirements:
+      - text

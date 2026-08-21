@@ -1,0 +1,83 @@
+name:
+  en: Link Cleaner
+  zh-CN: 链接参数清洗
+identifier: com.flyclip.extension.link-cleaner
+description:
+  en: Remove tracking query parameters (utm_*, spm, ref, fbclid, etc.) from
+    selected URLs.
+  zh-CN: 自动剔除选中文本/链接中冗余的追踪参数（如 utm_*, spm, ref, fbclid 等）。
+icon: iconify:tabler:link-off
+actions:
+  - title:
+      en: Clean URL
+      zh-CN: 清洗链接
+    identifier: clean_url
+    javascript: "
+
+      \            const input = flyclip.input.text.trim();
+
+      \            const trackingKeys = new Set([
+
+      \              'utm_source', 'utm_medium', 'utm_campaign', 'utm_term',
+      'utm_content',
+
+      \              'spm', 'spm_id_from', 'from_source', 'from', 'ref',
+      'source',
+
+      \              'fbclid', 'gclid', 'gclsrc', 'dclid', 'msclkid', 'twclid',
+
+      \              '_hsenc', '_hsmi', 'mc_cid', 'mc_eid', 'yclid', 'igshid',
+
+      \              'si', 'feature', 'share_source', 'share_medium',
+      'vd_source'
+
+      \            ]);
+
+
+      \            function cleanSingleUrl(raw) {
+
+      \              try {
+
+      \                const url = new URL(raw);
+
+      \                const params = new URLSearchParams(url.search);
+
+      \                const toDelete = [];
+
+      \                for (const key of params.keys()) {
+
+      \                  if (trackingKeys.has(key.toLowerCase()) ||
+      key.toLowerCase().startsWith('utm_')) {
+
+      \                    toDelete.push(key);
+
+      \                  }
+
+      \                }
+
+      \                toDelete.forEach(k => params.delete(k));
+
+      \                url.search = params.toString();
+
+      \                return url.toString();
+
+      \              } catch (e) {
+
+      \                return raw;
+
+      \              }
+
+      \            }
+
+
+      \            // Replace URLs in text
+
+      \            const urlRegex = /https?:\\/\\/[^\\s]+/gi;
+
+      \            return input.replace(urlRegex, match =>
+      cleanSingleUrl(match));
+
+      \          "
+    requirements:
+      - text
+    after: paste-result

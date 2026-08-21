@@ -1,0 +1,14 @@
+name:
+  en: Google Maps
+  zh-CN: Google 地图位置搜索
+identifier: com.flyclip.extension.google-maps
+description:
+  en: Search addresses, locations, and directions on Google Maps.
+  zh-CN: 在 Google Maps 检索地址位置、店铺商家与导航路线。
+icon: iconify:simple-icons:googlemaps
+actions:
+  - title: Google Maps
+    url: https://www.google.com/maps/search/***
+    clean query: true
+    requirements:
+      - text

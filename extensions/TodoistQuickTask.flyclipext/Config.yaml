@@ -1,0 +1,14 @@
+name:
+  en: Todoist Add Task
+  zh-CN: Todoist 快速添加待办
+identifier: com.flyclip.extension.todoist-task
+description:
+  en: Add the selected text as a new task in Todoist web app.
+  zh-CN: 将选中的文本快速添加为 Todoist 的新待办任务。
+icon: iconify:simple-icons:todoist
+actions:
+  - title: Todoist
+    url: https://todoist.com/add?text=***
+    clean query: true
+    requirements:
+      - text

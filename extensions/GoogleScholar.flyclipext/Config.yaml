@@ -1,0 +1,15 @@
+name:
+  en: Google Scholar
+  zh-CN: Google 学术搜索
+identifier: com.flyclip.extension.google-scholar
+description:
+  en: Search peer-reviewed papers, theses, books, abstracts and court opinions on
+    Google Scholar.
+  zh-CN: 在 Google 学术检索期刊论文、硕博论文、学术专著与文献引用。
+icon: iconify:simple-icons:googlescholar
+actions:
+  - title: Google Scholar
+    url: https://scholar.google.com/scholar?q=***
+    clean query: true
+    requirements:
+      - text

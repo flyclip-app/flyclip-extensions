@@ -1,0 +1,15 @@
+name:
+  en: Wolfram|Alpha
+  zh-CN: Wolfram|Alpha 计算知识引擎
+identifier: com.flyclip.extension.wolfram-alpha
+description:
+  en: Calculate expert-level answers using Wolfram Alpha AI and curated knowledge
+    algorithms.
+  zh-CN: 使用 Wolfram Alpha 进行高级数学推导、科学公式计算与常识推理。
+icon: iconify:simple-icons:wolfram
+actions:
+  - title: Wolfram|Alpha
+    url: https://www.wolframalpha.com/input?i=***
+    clean query: true
+    requirements:
+      - text

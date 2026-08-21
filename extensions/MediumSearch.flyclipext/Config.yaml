@@ -1,0 +1,14 @@
+name:
+  en: Medium Search
+  zh-CN: Medium 博客文章搜索
+identifier: com.flyclip.extension.medium-search
+description:
+  en: Search in-depth technical blogs and stories on Medium.
+  zh-CN: 在 Medium 检索优质技术专栏、开发者手记与深度博文。
+icon: iconify:simple-icons:medium
+actions:
+  - title: Medium
+    url: https://medium.com/search?q=***
+    clean query: true
+    requirements:
+      - text

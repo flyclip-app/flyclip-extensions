@@ -1,0 +1,14 @@
+name:
+  en: Goodreads Book Search
+  zh-CN: Goodreads 读书与书评
+identifier: com.flyclip.extension.goodreads
+description:
+  en: Find books, book reviews, quotes, and author pages on Goodreads.
+  zh-CN: 在 Goodreads 查找图书评分、书友长评与作者主页。
+icon: iconify:simple-icons:goodreads
+actions:
+  - title: Goodreads
+    url: https://www.goodreads.com/search?q=***
+    clean query: true
+    requirements:
+      - text

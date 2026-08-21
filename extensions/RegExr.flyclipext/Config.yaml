@@ -1,0 +1,13 @@
+name:
+  en: RegExr
+  zh-CN: RegExr 正则测试与解释
+identifier: com.flyclip.extension.regexr
+description:
+  en: Open regex pattern on RegExr with real-time matching and explanation.
+  zh-CN: 在 RegExr 打开选中的正则表达式，进行即时可视化调试与解析。
+icon: iconify:tabler:regex
+actions:
+  - title: RegExr
+    url: https://regexr.com/?expression=***
+    requirements:
+      - text

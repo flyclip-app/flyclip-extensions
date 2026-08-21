@@ -1,0 +1,14 @@
+name:
+  en: Docker Hub
+  zh-CN: Docker Hub 容器镜像搜索
+identifier: com.flyclip.extension.dockerhub
+description:
+  en: Search official and community Docker container images on Docker Hub.
+  zh-CN: 在 Docker Hub 快速检索官方与社区容器镜像。
+icon: iconify:simple-icons:docker
+actions:
+  - title: Docker Hub
+    url: https://hub.docker.com/search?q=***
+    clean query: true
+    requirements:
+      - text

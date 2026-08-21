@@ -1,0 +1,15 @@
+name:
+  en: arXiv Research Papers
+  zh-CN: arXiv 预印本学术搜索
+identifier: com.flyclip.extension.arxiv-search
+description:
+  en: Search open access research papers in AI, computer science, physics,
+    mathematics on arXiv.
+  zh-CN: 检索 AI、计算机科学、数学与物理学领域的 arXiv 开放学术预印本文献。
+icon: iconify:tabler:atom
+actions:
+  - title: arXiv
+    url: https://arxiv.org/search/?query=***&searchtype=all
+    clean query: true
+    requirements:
+      - text

@@ -1,0 +1,51 @@
+name:
+  en: Open URLs
+  zh-CN: 批量打开链接
+identifier: com.flyclip.extension.open-urls
+description:
+  en: Extract all web URLs from selected text and open them simultaneously in your
+    default browser.
+  zh-CN: 正则提取选中文本中的所有网址并批量在默认浏览器中打开。
+icon: iconify:tabler:external-link
+actions:
+  - title:
+      en: Open All URLs
+      zh-CN: 打开所有链接
+    identifier: open_all
+    javascript: "
+
+      \            const text = flyclip.input.text;
+
+      \            const urlRegex = /https?:\\/\\/[^\\s'\"<>()]+/gi;
+
+      \            const matches = text.match(urlRegex) || [];
+
+      \            const uniqueUrls = Array.from(new Set(matches));
+
+
+      \            if (uniqueUrls.length === 0) {
+
+      \              return \"[未检测到有效 URL 链接]\";
+
+      \            }
+
+
+      \            // Open each URL using flyclip or system browser
+
+      \            uniqueUrls.forEach(url => {
+
+      \              if (typeof flyclip.openUrl === 'function') {
+
+      \                flyclip.openUrl(url);
+
+      \              }
+
+      \            });
+
+
+      \            return `已打开 ${uniqueUrls.length} 个网页链接`;
+
+      \          "
+    requirements:
+      - text
+    after: show-result

@@ -1,0 +1,37 @@
+name:
+  en: ROT13 Cipher
+  zh-CN: ROT13 密文转换
+identifier: com.flyclip.extension.rot13
+description:
+  en: Apply or decode the classic ROT13 Caesar cipher on English text.
+  zh-CN: 对选中的英文字母执行经典的 ROT13 凯撒密码位移加密/解密。
+icon: iconify:tabler:lock-code
+actions:
+  - title:
+      en: ROT13 Encode/Decode
+      zh-CN: ROT13 编解码
+    identifier: rot13
+    javascript: "
+
+      \            return flyclip.input.text.replace(/[a-zA-Z]/g, c => {
+
+      \              const code = c.charCodeAt(0);
+
+      \              if (code >= 65 && code <= 90) {
+
+      \                return String.fromCharCode(((code - 65 + 13) % 26) + 65);
+
+      \              } else if (code >= 97 && code <= 122) {
+
+      \                return String.fromCharCode(((code - 97 + 13) % 26) + 97);
+
+      \              }
+
+      \              return c;
+
+      \            });
+
+      \          "
+    requirements:
+      - text
+    after: paste-result

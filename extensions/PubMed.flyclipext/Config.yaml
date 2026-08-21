@@ -1,0 +1,15 @@
+name:
+  en: PubMed
+  zh-CN: PubMed 医学文献检索
+identifier: com.flyclip.extension.pubmed
+description:
+  en: Search biomedical and life sciences journal literature at the National
+    Library of Medicine.
+  zh-CN: 检索 NIH / PubMed 生物医药与生命科学期刊论文数据库。
+icon: iconify:tabler:dna-2
+actions:
+  - title: PubMed
+    url: https://pubmed.ncbi.nlm.nih.gov/?term=***
+    clean query: true
+    requirements:
+      - text

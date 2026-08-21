@@ -1,0 +1,14 @@
+name:
+  en: Rotten Tomatoes
+  zh-CN: 烂番茄影视评分
+identifier: com.flyclip.extension.rotten-tomatoes
+description:
+  en: Search movie and TV show ratings and tomatometer scores on Rotten Tomatoes.
+  zh-CN: 在烂番茄检索最新电影/美剧的新鲜度评分与专业影评。
+icon: iconify:simple-icons:rottentomatoes
+actions:
+  - title: Rotten Tomatoes
+    url: https://www.rottentomatoes.com/search?search=***
+    clean query: true
+    requirements:
+      - text

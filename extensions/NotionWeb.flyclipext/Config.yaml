@@ -1,0 +1,14 @@
+name:
+  en: Notion Search
+  zh-CN: Notion 工作区搜索
+identifier: com.flyclip.extension.notion-search
+description:
+  en: Open and search inside your Notion workspace.
+  zh-CN: 在 Notion 工作区中快速发起全文检索与页面导航。
+icon: iconify:simple-icons:notion
+actions:
+  - title: Notion
+    url: https://www.notion.so/search?query=***
+    clean query: true
+    requirements:
+      - text

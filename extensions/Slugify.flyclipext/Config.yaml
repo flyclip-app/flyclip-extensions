@@ -1,0 +1,39 @@
+name:
+  en: Slugify
+  zh-CN: URL 别名化 (Slug)
+identifier: com.flyclip.extension.slugify
+description:
+  en: Convert text into a URL-friendly, lowercase, hyphen-separated slug.
+  zh-CN: 将选中文本转换为适合作为网页 URL 或文章别名的 slug 格式。
+icon: iconify:tabler:slug
+actions:
+  - title:
+      en: Slugify
+      zh-CN: 转为 Slug
+    identifier: slugify
+    javascript: "
+
+      \            return flyclip.input.text
+
+      \              .toString()
+
+      \              .normalize('NFD')
+
+      \              .replace(/[̀-ͯ]/g, '')
+
+      \              .toLowerCase()
+
+      \              .trim()
+
+      \              .replace(/[^a-z0-9\\s-]/g, '')
+
+      \              .replace(/[\\s_]+/g, '-')
+
+      \              .replace(/\\-+/g, '-')
+
+      \              .replace(/^-+|-+$/g, '');
+
+      \          "
+    requirements:
+      - text
+    after: paste-result

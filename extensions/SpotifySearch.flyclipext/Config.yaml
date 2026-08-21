@@ -1,0 +1,14 @@
+name:
+  en: Spotify Music Search
+  zh-CN: Spotify 音乐与播客
+identifier: com.flyclip.extension.spotify-search
+description:
+  en: Search tracks, albums, artists and podcasts on Spotify.
+  zh-CN: 在 Spotify 快速检索歌曲、专辑、歌手与播客节目。
+icon: iconify:simple-icons:spotify
+actions:
+  - title: Spotify
+    url: https://open.spotify.com/search/***
+    clean query: true
+    requirements:
+      - text

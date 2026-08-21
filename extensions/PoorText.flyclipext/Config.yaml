@@ -1,0 +1,43 @@
+name:
+  en: PoorText (Plain Text)
+  zh-CN: 纯文本脱色/去样式
+identifier: com.flyclip.extension.poor-text
+description:
+  en: Strip all HTML markup, rich text styling, and trailing whitespace, returning
+    clean plain text.
+  zh-CN: 剥离所有 HTML 标签、富文本样式与多余空白，保留最干净的纯文本。
+icon: iconify:tabler:file-text
+actions:
+  - title:
+      en: Strip Formatting
+      zh-CN: 清除格式与HTML
+    identifier: strip_formatting
+    javascript: "
+
+      \            return flyclip.input.text
+
+      \              .replace(/<[^>]*>/g, '') // remove HTML tags
+
+      \              .replace(/&nbsp;/g, ' ')
+
+      \              .replace(/&amp;/g, '&')
+
+      \              .replace(/&lt;/g, '<')
+
+      \              .replace(/&gt;/g, '>')
+
+      \              .replace(/&quot;/g, '\"')
+
+      \              .replace(/&#39;/g, \"'\")
+
+      \              .replace(/[ \\t]+/g, ' ') // collapse horizontal spaces
+
+      \              .replace(/\\n\\s*\\n\\s*\\n+/g, '\\n\\n') // collapse
+      triple newlines
+
+      \              .trim();
+
+      \          "
+    requirements:
+      - text
+    after: paste-result

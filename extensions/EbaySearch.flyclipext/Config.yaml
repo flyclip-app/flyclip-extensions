@@ -1,0 +1,14 @@
+name:
+  en: eBay Global Marketplace
+  zh-CN: eBay 跨境商品搜索
+identifier: com.flyclip.extension.ebay-search
+description:
+  en: Search auctions and buy-it-now products worldwide on eBay.
+  zh-CN: 在 eBay 检索全球海淘商品、二手器材与拍卖好物。
+icon: iconify:simple-icons:ebay
+actions:
+  - title: eBay
+    url: https://www.ebay.com/sch/i.html?_nkw=***
+    clean query: true
+    requirements:
+      - text

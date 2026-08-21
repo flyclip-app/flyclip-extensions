@@ -1,0 +1,14 @@
+name:
+  en: Archive.today Web Snapshot
+  zh-CN: Archive.today 网页快照/去墙
+identifier: com.flyclip.extension.archive-today
+description:
+  en: View or archive web pages on Archive.today (Archive.is), bypassing paywalls
+    and anti-adblockers.
+  zh-CN: 在 Archive.today / Archive.is 永久归档网页，绕过阅读限制与失效链接。
+icon: iconify:tabler:camera
+actions:
+  - title: Archive.today
+    url: https://archive.today/?run=1&url=***
+    requirements:
+      - text

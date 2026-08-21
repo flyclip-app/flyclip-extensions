@@ -1,0 +1,14 @@
+name:
+  en: Xiaohongshu (RED)
+  zh-CN: 小红书搜索与直达
+identifier: com.flyclip.extension.xiaohongshu
+description:
+  en: Search lifestyle, shopping notes and travel guides on Xiaohongshu (RED).
+  zh-CN: 在小红书快速检索生活方式、数码好物与经验笔记。
+icon: iconify:simple-icons:xiaohongshu
+actions:
+  - title: 小红书
+    url: https://www.xiaohongshu.com/search_result?keyword=***&type=51
+    clean query: true
+    requirements:
+      - text

@@ -1,0 +1,15 @@
+name:
+  en: DOI Resolver
+  zh-CN: DOI 数字文献解析
+identifier: com.flyclip.extension.doi-resolver
+description:
+  en: Resolve Digital Object Identifier (DOI) strings and jump directly to the
+    published paper on doi.org.
+  zh-CN: 识别文献 DOI 标识并在 doi.org 直达学术出版原文网页。
+icon: iconify:tabler:certificate
+actions:
+  - title: Resolve DOI
+    url: https://doi.org/{flyclip text}
+    regex: (?:10\.\d{4,9}/[-._;()/:A-Za-z0-9]+)
+    requirements:
+      - text

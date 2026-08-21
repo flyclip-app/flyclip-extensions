@@ -1,0 +1,38 @@
+name:
+  en: Convert Currency
+  zh-CN: 汇率查询与换算
+identifier: com.flyclip.extension.convert-currency
+description:
+  en: Quickly query currency exchange rates and convert amounts on Google Finance
+    / XE.
+  zh-CN: 快速查询货币汇率，并在 Google 财经 / XE 打开换算结果。
+icon: iconify:tabler:currency-dollar
+options:
+  - identifier: targetCurrency
+    label:
+      en: Target Currency
+      zh-CN: 目标货币
+    type: multiple
+    values:
+      - CNY
+      - USD
+      - EUR
+      - JPY
+      - GBP
+      - HKD
+    value labels:
+      - CNY (人民币)
+      - USD (美元)
+      - EUR (欧元)
+      - JPY (日元)
+      - GBP (英镑)
+      - HKD (港币)
+    default value: CNY
+actions:
+  - title:
+      en: Exchange Rate
+      zh-CN: 汇率换算
+    url: https://www.google.com/finance/quote/{flyclip text}-{flyclip option
+      targetCurrency}
+    requirements:
+      - text

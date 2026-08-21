@@ -1,0 +1,14 @@
+name:
+  en: X (Twitter) Search
+  zh-CN: X (Twitter) 动态搜索
+identifier: com.flyclip.extension.twitter-search
+description:
+  en: Search real-time tweets, users, and hashtags on X (Twitter).
+  zh-CN: 在 X (Twitter) 检索实时动态、推文、热门话题与用户。
+icon: iconify:simple-icons:x
+actions:
+  - title: X (Twitter)
+    url: https://x.com/search?q=***&f=live
+    clean query: true
+    requirements:
+      - text

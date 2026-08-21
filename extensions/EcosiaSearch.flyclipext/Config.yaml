@@ -1,0 +1,15 @@
+name:
+  en: Ecosia Search
+  zh-CN: Ecosia 植树环保搜索
+identifier: com.flyclip.extension.ecosia-search
+description:
+  en: Search the web with Ecosia, the search engine that plants trees with its
+    profits.
+  zh-CN: 使用通过搜索收益在全球种植树木的 Ecosia 绿色公益搜索引擎。
+icon: iconify:tabler:trees
+actions:
+  - title: Ecosia
+    url: https://www.ecosia.org/search?q=***
+    clean query: true
+    requirements:
+      - text

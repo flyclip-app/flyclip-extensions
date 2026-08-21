@@ -1,0 +1,14 @@
+name:
+  en: Stack Overflow
+  zh-CN: Stack Overflow 编程问答
+identifier: com.flyclip.extension.stackoverflow
+description:
+  en: Search coding questions and solutions on Stack Overflow.
+  zh-CN: 在 Stack Overflow 检索编程报错、算法与技术问答。
+icon: iconify:simple-icons:stackoverflow
+actions:
+  - title: Stack Overflow
+    url: https://stackoverflow.com/search?q=***
+    clean query: true
+    requirements:
+      - text

@@ -1,0 +1,14 @@
+name:
+  en: Kagi Search
+  zh-CN: Kagi 高级无广告搜索
+identifier: com.flyclip.extension.kagi-search
+description:
+  en: Fast, private, and ad-free search powered by Kagi.
+  zh-CN: 使用干净、极速、无广告的高品质 Kagi 搜索引擎。
+icon: iconify:tabler:shield-search
+actions:
+  - title: Kagi Search
+    url: https://kagi.com/search?q=***
+    clean query: true
+    requirements:
+      - text

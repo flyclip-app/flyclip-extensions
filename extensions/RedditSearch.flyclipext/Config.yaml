@@ -1,0 +1,14 @@
+name:
+  en: Reddit Search
+  zh-CN: Reddit 社区讨论搜索
+identifier: com.flyclip.extension.reddit-search
+description:
+  en: Search community posts and discussions on Reddit.
+  zh-CN: 在 Reddit 检索全球各类兴趣板块、技术帖子与真实用户评价。
+icon: iconify:simple-icons:reddit
+actions:
+  - title: Reddit
+    url: https://www.reddit.com/search/?q=***
+    clean query: true
+    requirements:
+      - text

@@ -1,0 +1,13 @@
+name:
+  en: Raindrop.io Bookmarks
+  zh-CN: Raindrop.io 云书签保存
+identifier: com.flyclip.extension.raindrop-bookmark
+description:
+  en: Quickly save the selected URL or page to Raindrop.io cloud bookmark manager.
+  zh-CN: 将选中链接或网页一键收藏至 Raindrop.io 跨平台云书签。
+icon: iconify:simple-icons:raindrop
+actions:
+  - title: Raindrop.io
+    url: https://app.raindrop.io/add?link=***
+    requirements:
+      - text

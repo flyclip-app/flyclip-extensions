@@ -1,0 +1,50 @@
+name:
+  en: Comma List
+  zh-CN: 逗号列表与换行互转
+identifier: com.flyclip.extension.comma-list
+description:
+  en: Split comma/semicolon separated items into multiple lines, or merge multiple
+    lines into a delimited list.
+  zh-CN: 在逗号/分号分隔的单行列表与多行换行列表之间自由互转。
+icon: iconify:tabler:list-numbers
+actions:
+  - title:
+      en: To Lines (转多行)
+      zh-CN: 拆分为多行
+    identifier: to_lines
+    javascript: "
+
+      \            return flyclip.input.text
+
+      \              .split(/[,;，；]/)
+
+      \              .map(s => s.trim())
+
+      \              .filter(Boolean)
+
+      \              .join(\"\\n\");
+
+      \          "
+    requirements:
+      - text
+    after: paste-result
+  - title:
+      en: To Comma List (转逗号列表)
+      zh-CN: 合并为逗号分隔
+    identifier: to_comma
+    javascript: "
+
+      \            return flyclip.input.text
+
+      \              .split(/\\r\\n|\\r|\\n/)
+
+      \              .map(s => s.trim())
+
+      \              .filter(Boolean)
+
+      \              .join(\", \");
+
+      \          "
+    requirements:
+      - text
+    after: paste-result

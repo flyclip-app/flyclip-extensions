@@ -1,0 +1,14 @@
+name:
+  en: PyPI Python Packages
+  zh-CN: PyPI Python 包搜索
+identifier: com.flyclip.extension.pypi-search
+description:
+  en: Search Python packages and modules on the Python Package Index (PyPI).
+  zh-CN: 在 PyPI 检索 Python 官方第三方开源包与库。
+icon: iconify:simple-icons:pypi
+actions:
+  - title: PyPI
+    url: https://pypi.org/search/?q=***
+    clean query: true
+    requirements:
+      - text

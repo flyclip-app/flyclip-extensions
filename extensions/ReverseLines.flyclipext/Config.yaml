@@ -1,0 +1,27 @@
+name:
+  en: Reverse Lines
+  zh-CN: 多行倒序排列
+identifier: com.flyclip.extension.reverse-lines
+description:
+  en: Reverse the order of selected lines (bottom to top).
+  zh-CN: 将选中的多行文本自底向上颠倒逆序排列。
+icon: iconify:tabler:arrows-sort
+actions:
+  - title:
+      en: Reverse Order
+      zh-CN: 倒序排列
+    identifier: reverse
+    javascript: "
+
+      \            return flyclip.input.text
+
+      \              .split(/\\r\\n|\\r|\\n/)
+
+      \              .reverse()
+
+      \              .join(\"\\n\");
+
+      \          "
+    requirements:
+      - text
+    after: paste-result

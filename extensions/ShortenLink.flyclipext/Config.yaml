@@ -1,0 +1,42 @@
+name:
+  en: Shorten Link (is.gd)
+  zh-CN: is.gd 快速生成短链接
+identifier: com.flyclip.extension.shorten-link
+description:
+  en: Shorten the selected URL using the is.gd API.
+  zh-CN: 通过 is.gd 免费服务将选中的长网址缩短为便携短链。
+icon: iconify:tabler:cut
+actions:
+  - title:
+      en: Shorten URL
+      zh-CN: 生成短链接
+    identifier: shorten
+    javascript: "
+
+      \            const url = flyclip.input.text.trim();
+
+      \            if (!url.startsWith('http://') &&
+      !url.startsWith('https://')) {
+
+      \              return \"[请选中以 http:// 或 https:// 开头的网址]\";
+
+      \            }
+
+      \            try {
+
+      \              const res = await
+      flyclip.http.get(`https://is.gd/create.php?format=simple&url=${encodeURIC\
+      omponent(url)}`);
+
+      \              return res.data.trim();
+
+      \            } catch (err) {
+
+      \              return \"[生成短链失败: \" + err.message + \"]\";
+
+      \            }
+
+      \          "
+    requirements:
+      - text
+    after: paste-result

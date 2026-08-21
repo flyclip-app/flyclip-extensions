@@ -1,0 +1,14 @@
+name:
+  en: Hacker News Search
+  zh-CN: Hacker News 技术热点搜索
+identifier: com.flyclip.extension.hackernews-search
+description:
+  en: Search stories, comments, and tech startup discussions on Hacker News.
+  zh-CN: 通过 HN Search (Algolia) 检索 Hacker News 历史深度技术讨论与文章。
+icon: iconify:simple-icons:ycombinator
+actions:
+  - title: Hacker News
+    url: https://hn.algolia.com/?q=***
+    clean query: true
+    requirements:
+      - text

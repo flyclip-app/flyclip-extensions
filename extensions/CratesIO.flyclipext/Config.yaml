@@ -1,0 +1,14 @@
+name:
+  en: Crates.io Rust Crates
+  zh-CN: Crates.io Rust 包搜索
+identifier: com.flyclip.extension.crates-io
+description:
+  en: Search Rust packages and libraries on Crates.io.
+  zh-CN: 在 Crates.io 检索 Rust 官方开源 Crates 库。
+icon: iconify:simple-icons:rust
+actions:
+  - title: Crates.io
+    url: https://crates.io/search?q=***
+    clean query: true
+    requirements:
+      - text

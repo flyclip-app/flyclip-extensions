@@ -1,0 +1,38 @@
+name:
+  en: Copy URLs
+  zh-CN: 提取所有网址
+identifier: com.flyclip.extension.copy-urls
+description:
+  en: Extract and copy only URL links found in selected text to clipboard as a
+    clean list.
+  zh-CN: 仅提取选中文本中的所有网址，整理为换行清单并存入剪贴板。
+icon: iconify:tabler:copy-check
+actions:
+  - title:
+      en: Copy URLs List
+      zh-CN: 提取网址清单
+    identifier: copy_urls
+    javascript: "
+
+      \            const text = flyclip.input.text;
+
+      \            const urlRegex = /https?:\\/\\/[^\\s'\"<>()]+/gi;
+
+      \            const matches = text.match(urlRegex) || [];
+
+      \            const uniqueUrls = Array.from(new Set(matches));
+
+
+      \            if (uniqueUrls.length === 0) {
+
+      \              return \"[选中文本中没有找到 URL]\";
+
+      \            }
+
+
+      \            return uniqueUrls.join(\"\\n\");
+
+      \          "
+    requirements:
+      - text
+    after: copy-result

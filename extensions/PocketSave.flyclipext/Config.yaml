@@ -1,0 +1,13 @@
+name:
+  en: Save to Pocket
+  zh-CN: Pocket 稍后读
+identifier: com.flyclip.extension.pocket-save
+description:
+  en: Save the selected URL to Pocket for comfortable offline reading.
+  zh-CN: 将选中文章链接一键保存到 Pocket 稍后读。
+icon: iconify:simple-icons:pocket
+actions:
+  - title: Pocket
+    url: https://getpocket.com/save?url=***
+    requirements:
+      - text

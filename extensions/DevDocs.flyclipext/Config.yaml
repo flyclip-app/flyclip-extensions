@@ -1,0 +1,14 @@
+name:
+  en: DevDocs API Docs
+  zh-CN: DevDocs 开发文档
+identifier: com.flyclip.extension.devdocs
+description:
+  en: Instant search across multiple API documentations in a single fast interface.
+  zh-CN: 在 DevDocs 中快速检索各类语言、库与框架的官方 API 参考文档。
+icon: iconify:tabler:book-2
+actions:
+  - title: DevDocs
+    url: https://devdocs.io/#q=***
+    clean query: true
+    requirements:
+      - text

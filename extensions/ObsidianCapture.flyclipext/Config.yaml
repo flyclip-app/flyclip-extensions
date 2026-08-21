@@ -1,0 +1,23 @@
+name:
+  en: Obsidian Quick Capture
+  zh-CN: Obsidian 笔记快速捕获
+identifier: com.flyclip.extension.obsidian-capture
+description:
+  en: Create a new note or append selected text to your Obsidian knowledge vault
+    using obsidian:// URI scheme.
+  zh-CN: 通过 obsidian:// 协议将划词内容快速保存或新建到 Obsidian 笔记库。
+icon: iconify:simple-icons:obsidian
+options:
+  - identifier: vaultName
+    label:
+      en: Vault Name
+      zh-CN: Vault 库名称
+    type: string
+    default value: MyVault
+actions:
+  - title:
+      en: Send to Obsidian
+      zh-CN: 存入 Obsidian
+    url: obsidian://new?vault={flyclip option vaultName}&content={flyclip text}
+    requirements:
+      - text

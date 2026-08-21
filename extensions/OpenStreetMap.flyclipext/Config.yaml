@@ -1,0 +1,14 @@
+name:
+  en: OpenStreetMap
+  zh-CN: OpenStreetMap 开放地图
+identifier: com.flyclip.extension.openstreetmap
+description:
+  en: Search geographical locations on OpenStreetMap, the free wiki world map.
+  zh-CN: 在 OpenStreetMap 开放地理数据平台检索全球位置与地图。
+icon: iconify:simple-icons:openstreetmap
+actions:
+  - title: OpenStreetMap
+    url: https://www.openstreetmap.org/search?query=***
+    clean query: true
+    requirements:
+      - text

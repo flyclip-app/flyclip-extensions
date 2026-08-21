@@ -1,0 +1,14 @@
+name:
+  en: Amap (AutoNavi Maps)
+  zh-CN: 高德地图位置搜索
+identifier: com.flyclip.extension.amap-search
+description:
+  en: Search addresses and locations across China on Amap (AutoNavi).
+  zh-CN: 在高德地图快速检索国内精准地址、地名商户与公交换乘。
+icon: iconify:tabler:map-pin
+actions:
+  - title: 高德地图
+    url: https://www.amap.com/search?query=***
+    clean query: true
+    requirements:
+      - text
